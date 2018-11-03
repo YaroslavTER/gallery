@@ -1,0 +1,16 @@
+.sort {
+  margin-bottom: 10px;
+  font-size: 14px;
+}
+
+.sort input {
+  display: none;
+}
+
+.sort label {
+  cursor: pointer;
+}
+
+.sort input[type="radio"]:checked + label {
+  font-weight: bold;
+}

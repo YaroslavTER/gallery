@@ -1,0 +1,23 @@
+@import url("./user/style.css");
+
+.posts-wrapper {
+  display: -ms-grid;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, 300px);
+  grid-gap: 20px;
+  -webkit-box-align: stretch;
+  -ms-flex-align: stretch;
+  align-items: stretch;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
+.post {
+  background-image: url("https://source.unsplash.com/user/erondu/300x300");
+  height: 300px;
+  max-width: 100%;
+  display: -ms-grid;
+  display: grid;
+  color: white;
+}

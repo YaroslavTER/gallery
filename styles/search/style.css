@@ -1,0 +1,32 @@
+/* fonts */
+
+.header-wrapper input {
+  font-size: 14px;
+}
+
+/* !fonts */
+
+.header-wrapper form {
+  margin-top: 10px;
+  margin-left: 10px;
+}
+
+.header-wrapper input {
+  max-width: 700px;
+  width: 85%;
+  padding: 5px;
+  border: none;
+  background-color: rgb(63, 63, 63);
+  color: rgb(241, 241, 241);
+}
+
+.header-wrapper label {
+  margin-top: 2px;
+  margin-left: -25px;
+  color: rgb(194, 194, 194);
+}
+
+.search-icon {
+  height: 17px;
+  margin-bottom: -2px;
+}

@@ -81,7 +81,8 @@
   padding: 0;
 }
 
-.inline-menu .sub-menu {
+.inline-menu .sub-menu,
+.burger .dropdown > ul {
   display: none;
 }
 
@@ -100,25 +101,6 @@
 .sub-menu li {
   padding: 5px;
 }
-
-/* menu open on click */
-#main-menu label {
-  margin-left: 0px;
-}
-
-input[type="checkbox"] {
-  display: none;
-}
-
-.sub-menu-click {
-  display: none;
-}
-
-input[type="checkbox"]:checked + li > ul {
-  display: grid;
-}
-
-/* !menu open on click */
 
 /* light */
 

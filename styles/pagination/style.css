@@ -1,0 +1,25 @@
+.pagination-wrapper {
+  display: -ms-grid;
+  display: grid;
+  padding: 25px;
+}
+
+.pagination {
+  justify-self: center;
+  background-color: white;
+}
+
+.pagination button img {
+  height: 20px;
+  margin-bottom: -4px;
+}
+
+.pagination .page-number {
+  font-size: 17px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+.pagination .current-page {
+  font-weight: bold;
+}

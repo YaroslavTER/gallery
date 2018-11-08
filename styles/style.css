@@ -3,6 +3,7 @@
 @import url("./posts/style.css");
 @import url("./breadcrumbs/style.css");
 @import url("./filter/style.css");
+@import url("./pagination/style.css");
 
 /* fonts */
 
@@ -48,26 +49,6 @@ article[role="main"] header {
   margin-right: 5px;
   margin-left: 5px;
 }
-
-/* pagination */
-
-.pagination-wrapper {
-  display: -ms-grid;
-  display: grid;
-  padding: 25px;
-}
-
-.pagination {
-  justify-self: center;
-  background-color: white;
-}
-
-.pagination button img {
-  height: 25px;
-  margin-bottom: -6px;
-}
-
-/* !pagination */
 
 .header-wrapper {
   display: -ms-grid;

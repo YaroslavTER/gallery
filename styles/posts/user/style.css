@@ -7,12 +7,12 @@
   display: grid;
 }
 
-.like-wrapper {
+.post .like-wrapper {
   background-image: linear-gradient(to bottom, black, transparent);
   height: 40px;
 }
 
-.like-wrapper > div {
+.post .like-wrapper > div {
   display: -ms-grid;
   display: grid;
   -ms-grid-columns: 120px 120px;
@@ -23,28 +23,36 @@
   margin-right: 5px;
 }
 
-.likes-number {
+.post .like-wrapper .like-icon {
+  -ms-grid-column: 1;
+}
+
+.post .like-wrapper .likes-number {
+  -ms-grid-column: 2;
+}
+
+.post .likes-number {
   align-self: center;
   font-size: 14px;
 }
 
-.like-icon {
+.post .like-icon {
   height: 20px;
 }
 
-.like-wrapper > div {
+.post .like-wrapper > div {
   width: 70px;
 }
 
-.user-name {
+.post .user-name {
   font-size: 12px;
 }
 
-.share-icon {
+.post .share-icon {
   height: 20px;
 }
 
-.user-wrapper {
+.post .user-wrapper {
   width: 100%;
   -ms-grid-columns: 150px 150px;
   grid-template-columns: 150px 150px;
@@ -53,7 +61,15 @@
   align-self: end;
 }
 
-.user {
+.post .user-wrapper .user {
+  -ms-grid-column: 1;
+}
+
+.post .user-wrapper .share {
+  -ms-grid-column: 2;
+}
+
+.post .user {
   width: 150px;
   display: -ms-grid;
   display: grid;
@@ -65,23 +81,23 @@
   -ms-grid-column: 1;
 }
 
-.user-image {
+.post .user-image {
   -ms-grid-column: 1;
   padding-left: 10px;
 }
 
-.user-image img {
+.post .user-image img {
   width: 35px;
   border-radius: 50%;
 }
 
-.user-name {
+.post .user-name {
   -ms-grid-column: 2;
   font-size: 12px;
   font-weight: bold;
 }
 
-.share {
+.post .share {
   width: 20px;
   justify-self: end;
   margin-right: 10px;

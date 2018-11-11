@@ -12,21 +12,27 @@
 
 @font-face {
   font-family: "Dancing Script";
-  src: url("./fonts/dancing-script/DancingScript-Regular.ttf")
-    format("truetype");
+  src: url("../fonts/dancing-script/DancingScript-Regular.ttf")
+      format("truetype"),
+    url("../fonts/dancing-script/DancingScript-Regular.otf") format("opentype");
 }
 
 @font-face {
-  font-family: "Roboto";
-  src: url("./fonts/roboto/Roboto-Regular.ttf") format("truetype");
+  font-family: "Allura Regular";
+  src: url("../fonts/allura/Allura-Regular.otf") format("opentype");
+}
+
+@font-face {
+  font-family: "Assistant";
+  src: url("../fonts/assistant/Assistant-Regular.otf") format("opentype");
 }
 
 body {
-  font-family: "Roboto", sans-serif;
+  font-family: "Assistant";
 }
 
 body > header h2 {
-  font-family: "Dancing Script";
+  font-family: "Allura Regular";
 }
 
 /* !fonts */

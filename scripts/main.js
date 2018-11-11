@@ -1,6 +1,6 @@
-const Visibility = new Visibility();
+const visibility = new Visibility();
 
-Visibility.apply([
+visibility.apply([
   {
     domElementClass: "posts-wrapper",
     event: "click",

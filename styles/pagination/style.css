@@ -5,6 +5,7 @@
 }
 
 .pagination {
+  -ms-grid-column-align: center;
   justify-self: center;
   background-color: white;
 }

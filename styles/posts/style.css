@@ -14,10 +14,14 @@
 }
 
 .post {
-  background-image: url("https://source.unsplash.com/user/erondu/300x300");
+  background-image: url("../../images/header/kaidi-guo.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
   height: 300px;
   max-width: 100%;
   display: -ms-grid;
   display: grid;
   color: white;
+  cursor: pointer;
 }

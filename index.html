@@ -1,396 +1,799 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.4.1/css/all.css"
+      integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz"
+      crossorigin="anonymous"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Roboto"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Dancing+Script"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./styles/style.css" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Hind+Siliguri"
+      rel="stylesheet"
+    />
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz"
-    crossorigin="anonymous">
-  <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css?family=Dancing+Script" rel="stylesheet">
-  <link rel="stylesheet" href="./styles/style.css">
+    <script src="./scripts/media-queries-ie/respond.js"></script>
+    <title>Gallery</title>
+  </head>
 
-  <link href="https://fonts.googleapis.com/css?family=Hind+Siliguri" rel="stylesheet">
-
-  
-  <script src="./scripts/media-queries-ie/respond.js"></script>
-  <title>Gallery</title>
-</head>
-
-<body>
-  <header>
-    <div class="header-wrapper">
-      <h2>Gallery</h2>
-      <form action="">
-        <input type="text" name="text" placeholder="Search" id="search">
-        <label for="search"><button><img class="search-icon" src="./icons/search/search.svg" alt="search"></button></label>
-      </form>
-      <nav id="main-menu">
-        <ul class="inline-menu dark">
-          <li>Home</li>
-          <li class="dropdown">
-              <div class="sub-menu-contariner">Browse <img class="arrow-icon" src="./icons/arrows/sub-menu/white-down-arrow.svg"
-                  alt="Show sub menu">
-              </div>
-            <ul class="dropdown-menu">
-              <li class="sub-menu-wrapper">Popular
-                <ul class="sub-menu light">
-                  <li class="sub-menu-wrapper">Popular
-                    <ul class="sub-menu dark">
-                      <li>Popular</li>
-                      <li>New</li>
-                      <li>Most shared</li>
-                    </ul>
-                  </li>
-                  <li>New</li>
-                  <li>Most shared</li>
-                </ul>
-              </li>
-            </ul>
-          </li>
-          <li>
-            Upload
-          </li>
-          <li class="dropdown">
-              <img class="more-icon" src="./icons/menu/more.svg" alt="more">
-            <ul class="dark main-menu-list sub-menu-click">
-              <li>Login</li>
-              <li>Sign Up</li>
-              <li>Home</li>
-              <li class="sub-menu-wrapper">
-                  Browse <img class="arrow-icon" src="./icons/arrows/sub-menu/white-down-arrow.svg" alt="Show sub menu">
-                <ul class="sub-menu light sub-menu-click">
-                  <li class="sub-menu-wrapper">
-                  <div>Popular <img class="arrow-icon" src="./icons/arrows/sub-menu/black-down-arrow.svg"
-                        alt="Show sub menu"></div>
-                    <ul class="sub-menu dark sub-menu-click">
-                      <li>Popular</li>
-                      <li>New</li>
-                      <li>Most shared</li>
-                    </ul>
-                  </li>
-                  <li>New</li>
-                  <li>Most shared</li>
-                </ul>
-              </li>
-              <li>Upload</li>
-              <li>About Us</li>
-            </ul>
-          </li>
-        </ul>
-        <ul class="burger">
-          <li class="dropdown">
-              <img class="burger-icon" src="./icons/menu/menu.svg" alt="menu">
-            <ul class="dark main-menu-list sub-menu-click">
-              <li>Login</li>
-              <li>Sign Up</li>
-              <li>Home</li>
-              <li class="sub-menu-wrapper">
-                <div>Browse <img class="arrow-icon" src="./icons/arrows/sub-menu/white-down-arrow.svg" alt="Show sub menu"></div>  
-                <ul class="sub-menu light sub-menu-click">
-                  <li class="sub-menu-wrapper">
-                    <div>Popular <img class="arrow-icon" src="./icons/arrows/sub-menu/black-down-arrow.svg"
-                        alt="Show sub menu"></div>
-                    <ul class="sub-menu dark sub-menu-click">
-                      <li>Popular</li>
-                      <li>New</li>
-                      <li>Most shared</li>
-                    </ul>
-                  </li>
-                  <li>New</li>
-                  <li>Most shared</li>
-                </ul>
-              </li>
-              <li>Upload</li>
-              <li>About Us</li>
-            </ul>
-          </li>
-        </ul>
-      </nav>
-    </div>
-  </header>
-
-
-  <article role=main>
+  <body>
     <header>
-      <nav id="bredcrums">
-        <button class="empty-button">
-          <h1>Browse</h1>
-        </button><img class="right-arrow" src="./icons/arrows/right-arrow.svg" alt="">
-        <h1>Pictures</h1>
-      </nav>
-      <div class="sort">
-        <input type="radio" checked name="posts-sort" id="trending">
-        <label for="trending">Trending</label>
-        /
-        <input type="radio" name="posts-sort" id="new">
-        <label for="new">New</label>
+      <div class="header-wrapper">
+        <h2>Gallery</h2>
+        <form action="">
+          <input type="text" name="text" placeholder="Search" id="search" />
+          <label for="search"
+            ><button>
+              <img
+                class="search-icon"
+                src="./icons/search/search.svg"
+                alt="search"
+              /></button
+          ></label>
+        </form>
+        <nav id="main-menu">
+          <ul class="inline-menu dark">
+            <li>Home</li>
+            <li class="dropdown">
+              <div class="sub-menu-contariner">
+                Browse
+                <img
+                  class="arrow-icon"
+                  src="./icons/arrows/sub-menu/white-down-arrow.svg"
+                  alt="Show sub menu"
+                />
+              </div>
+              <ul class="dropdown-menu">
+                <li class="sub-menu-wrapper">
+                  Popular
+                  <ul class="sub-menu light">
+                    <li class="sub-menu-wrapper">
+                      Popular
+                      <ul class="sub-menu dark">
+                        <li>Popular</li>
+                        <li>New</li>
+                        <li>Most shared</li>
+                      </ul>
+                    </li>
+                    <li>New</li>
+                    <li>Most shared</li>
+                  </ul>
+                </li>
+              </ul>
+            </li>
+            <li>Upload</li>
+            <li class="dropdown">
+              <img class="more-icon" src="./icons/menu/more.svg" alt="more" />
+              <ul class="dark main-menu-list sub-menu-click">
+                <li>Login</li>
+                <li>Sign Up</li>
+                <li>Home</li>
+                <li class="sub-menu-wrapper">
+                  Browse
+                  <img
+                    class="arrow-icon"
+                    src="./icons/arrows/sub-menu/white-down-arrow.svg"
+                    alt="Show sub menu"
+                  />
+                  <ul class="sub-menu light sub-menu-click">
+                    <li class="sub-menu-wrapper">
+                      <div>
+                        Popular
+                        <img
+                          class="arrow-icon"
+                          src="./icons/arrows/sub-menu/black-down-arrow.svg"
+                          alt="Show sub menu"
+                        />
+                      </div>
+
+                      <ul class="sub-menu dark sub-menu-click">
+                        <li>Popular</li>
+                        <li>New</li>
+                        <li>Most shared</li>
+                      </ul>
+                    </li>
+                    <li>New</li>
+                    <li>Most shared</li>
+                  </ul>
+                </li>
+                <li>Upload</li>
+                <li>About Us</li>
+              </ul>
+            </li>
+          </ul>
+          <ul class="burger">
+            <li class="dropdown">
+              <img class="burger-icon" src="./icons/menu/menu.svg" alt="menu" />
+              <ul class="dark main-menu-list sub-menu-click">
+                <li>Login</li>
+                <li>Sign Up</li>
+                <li>Home</li>
+                <li class="sub-menu-wrapper">
+                  <div>
+                    Browse
+                    <img
+                      class="arrow-icon"
+                      src="./icons/arrows/sub-menu/white-down-arrow.svg"
+                      alt="Show sub menu"
+                    />
+                  </div>
+                  <ul class="sub-menu light sub-menu-click">
+                    <li class="sub-menu-wrapper">
+                      <div>
+                        Popular
+                        <img
+                          class="arrow-icon"
+                          src="./icons/arrows/sub-menu/black-down-arrow.svg"
+                          alt="Show sub menu"
+                        />
+                      </div>
+
+                      <ul class="sub-menu dark sub-menu-click">
+                        <li>Popular</li>
+                        <li>New</li>
+                        <li>Most shared</li>
+                      </ul>
+                    </li>
+                    <li>New</li>
+                    <li>Most shared</li>
+                  </ul>
+                </li>
+                <li>Upload</li>
+                <li>About Us</li>
+              </ul>
+            </li>
+          </ul>
+        </nav>
       </div>
     </header>
-    <div class="posts-wrapper">
-      <article class="post" id="post-10">
-        <div class="like-wrapper">
-          <div>
-            <img class="like-icon" src="./icons/social/like/like.svg" alt="like">
-            <div class="likes-number">4523</div>
-          </div>
-        </div>
-        <div class="user-wrapper">
-          <div class="user">
-            <div class="user-image"><img src="https://shareville-media.s3.amazonaws.com/cache/41/2c/412cb688e429f372335f7527695b29b8.jpg"
-                alt="">
-            </div>
-            <div class="user-name">Twitch Kappa</div>
-          </div>
-          <div class="share"><img class="share-icon" src="./icons/social/share/white-share.svg" alt="share"></div>
-        </div>
-      </article>
-      <article class="post" id="post-9">
-        <div class="like-wrapper">
-          <div>
-            <img class="like-icon" src="./icons/social/like/like.svg" alt="like">
-            <div class="likes-number">4523</div>
-          </div>
-        </div>
-        <div class="user-wrapper">
-          <div class="user">
-            <div class="user-image"><img src="https://shareville-media.s3.amazonaws.com/cache/41/2c/412cb688e429f372335f7527695b29b8.jpg"
-                alt="">
-            </div>
-            <div class="user-name">Twitch Kappa</div>
-          </div>
-          <div class="share"><img class="share-icon" src="./icons/social/share/white-share.svg" alt="share"></div>
-        </div>
-      </article>
-      <article class="post" id="post-8">
-        <div class="like-wrapper">
-          <div>
-            <img class="like-icon" src="./icons/social/like/like.svg" alt="like">
-            <div class="likes-number">4523</div>
-          </div>
-        </div>
-        <div class="user-wrapper">
-          <div class="user">
-            <div class="user-image"><img src="https://shareville-media.s3.amazonaws.com/cache/41/2c/412cb688e429f372335f7527695b29b8.jpg"
-                alt="">
-            </div>
-            <div class="user-name">Twitch Kappa</div>
-          </div>
-          <div class="share"><img class="share-icon" src="./icons/social/share/white-share.svg" alt="share"></div>
-        </div>
-      </article>
-      <article class="post" id="post-7">
-        <div class="like-wrapper">
-          <div>
-            <img class="like-icon" src="./icons/social/like/like.svg" alt="like">
-            <div class="likes-number">4523</div>
-          </div>
-        </div>
-        <div class="user-wrapper">
-          <div class="user">
-            <div class="user-image"><img src="https://shareville-media.s3.amazonaws.com/cache/41/2c/412cb688e429f372335f7527695b29b8.jpg"
-                alt="">
-            </div>
-            <div class="user-name">Twitch Kappa</div>
-          </div>
-          <div class="share"><img class="share-icon" src="./icons/social/share/white-share.svg" alt="share"></div>
-        </div>
-      </article>
-      <article class="post" id="post-6">
-        <div class="like-wrapper">
-          <div>
-            <img class="like-icon" src="./icons/social/like/like.svg" alt="like">
-            <div class="likes-number">4523</div>
-          </div>
-        </div>
-        <div class="user-wrapper">
-          <div class="user">
-            <div class="user-image"><img src="https://shareville-media.s3.amazonaws.com/cache/41/2c/412cb688e429f372335f7527695b29b8.jpg"
-                alt="">
-            </div>
-            <div class="user-name">Twitch Kappa</div>
-          </div>
-          <div class="share"><img class="share-icon" src="./icons/social/share/white-share.svg" alt="share"></div>
-        </div>
-      </article>
-      <article class="post" id="post-5">
-        <div class="like-wrapper">
-          <div>
-            <img class="like-icon" src="./icons/social/like/like.svg" alt="like">
-            <div class="likes-number">4523</div>
-          </div>
-        </div>
-        <div class="user-wrapper">
-          <div class="user">
-            <div class="user-image"><img src="https://shareville-media.s3.amazonaws.com/cache/41/2c/412cb688e429f372335f7527695b29b8.jpg"
-                alt="">
-            </div>
-            <div class="user-name">Twitch Kappa</div>
-          </div>
-          <div class="share"><img class="share-icon" src="./icons/social/share/white-share.svg" alt="share"></div>
-        </div>
-      </article>
-      <article class="post" id="post-4">
-        <div class="like-wrapper">
-          <div>
-            <img class="like-icon" src="./icons/social/like/like.svg" alt="like">
-            <div class="likes-number">4523</div>
-          </div>
-        </div>
-        <div class="user-wrapper">
-          <div class="user">
-            <div class="user-image"><img src="https://shareville-media.s3.amazonaws.com/cache/41/2c/412cb688e429f372335f7527695b29b8.jpg"
-                alt="">
-            </div>
-            <div class="user-name">Twitch Kappa</div>
-          </div>
-          <div class="share"><img class="share-icon" src="./icons/social/share/white-share.svg" alt="share"></div>
-        </div>
-      </article>
-      <article class="post" id="post-3">
-        <div class="like-wrapper">
-          <div>
-            <img class="like-icon" src="./icons/social/like/like.svg" alt="like">
-            <div class="likes-number">4523</div>
-          </div>
-        </div>
-        <div class="user-wrapper">
-          <div class="user">
-            <div class="user-image"><img src="https://shareville-media.s3.amazonaws.com/cache/41/2c/412cb688e429f372335f7527695b29b8.jpg"
-                alt="">
-            </div>
-            <div class="user-name">Twitch Kappa</div>
-          </div>
-          <div class="share"><img class="share-icon" src="./icons/social/share/white-share.svg" alt="share"></div>
-        </div>
-      </article>
-      <article class="post" id="post-2">
-        <div class="like-wrapper">
-          <div>
-            <img class="like-icon" src="./icons/social/like/like.svg" alt="like">
-            <div class="likes-number">4523</div>
-          </div>
-        </div>
-        <div class="user-wrapper">
-          <div class="user">
-            <div class="user-image"><img src="https://shareville-media.s3.amazonaws.com/cache/41/2c/412cb688e429f372335f7527695b29b8.jpg"
-                alt="">
-            </div>
-            <div class="user-name">Twitch Kappa</div>
-          </div>
-          <div class="share"><img class="share-icon" src="./icons/social/share/white-share.svg" alt="share"></div>
-        </div>
-      </article>
-      <article class="post" id="post-1">
-        <div class="like-wrapper">
-          <div>
-            <img class="like-icon" src="./icons/social/like/like.svg" alt="like">
-            <div class="likes-number">4523</div>
-          </div>
-        </div>
-        <div class="user-wrapper">
-          <div class="user">
-            <div class="user-image"><img src="https://shareville-media.s3.amazonaws.com/cache/41/2c/412cb688e429f372335f7527695b29b8.jpg"
-                alt="">
-            </div>
-            <div class="user-name">Twitch Kappa</div>
-          </div>
-          <div class="share"><img class="share-icon" src="./icons/social/share/white-share.svg" alt="share"></div>
-        </div>
-      </article>
 
-      <article class="modal-wrapper">
-        <div class="modal-window">
-          <header>
-            <div class="user-wrapper">
-              <div class="user">
-                <div class="user-image">
-                </div>
-                <div class="user-name">Till Lindemann</div>
-              </div>
+    <article role="main">
+      <header>
+        <nav id="bredcrums">
+          <button class="empty-button"><h1>Browse</h1></button
+          ><img
+            class="right-arrow"
+            src="./icons/arrows/right-arrow.svg"
+            alt=""
+          />
+          <h1>Pictures</h1>
+        </nav>
+        <div class="sort">
+          <input type="radio" checked name="posts-sort" id="trending" />
+          <label for="trending">Trending</label> /
+          <input type="radio" name="posts-sort" id="new" />
+          <label for="new">New</label>
+        </div>
+      </header>
+      <div class="posts-wrapper">
+
+        <article class="post" id="post-10">
+          <div class="like-wrapper">
+            <div>
+              <img
+                class="like-icon"
+                src="./icons/social/like/like.svg"
+                alt="like"
+              />
+              <div class="likes-number">4523</div>
             </div>
-            <div class="close-wrapper"><img src="./icons/modal/close.svg" class="close" alt="close"></div>
-          </header>
-          <div class="modal-content">
-            <div class="content-wrapper">
-              <div class="content-image">
-                <img src="./images/header/kaidi-guo.jpg" alt=""/>
+          </div>
+          <div class="user-wrapper">
+            <div class="user">
+              <div class="user-image">
+                <img
+                  src="https://shareville-media.s3.amazonaws.com/cache/41/2c/412cb688e429f372335f7527695b29b8.jpg"
+                  alt=""
+                />
               </div>
-              <div class="social-wrapper">
-                <div class="like-wrapper">
-                  <div class="like"><img src="./icons/social/like/like.svg" alt=""></div>
-                  <div class="number">123</div>
+              <div class="user-name">Twitch Kappa</div>
+            </div>
+            <div class="share">
+              <img
+                class="share-icon"
+                src="./icons/social/share/white-share.svg"
+                alt="share"
+              />
+            </div>
+          </div>
+        </article>
+
+
+        <article class="post" id="post-9">
+          <div class="like-wrapper">
+            <div>
+              <img
+                class="like-icon"
+                src="./icons/social/like/like.svg"
+                alt="like"
+              />
+              <div class="likes-number">4523</div>
+            </div>
+          </div>
+          <div class="user-wrapper">
+            <div class="user">
+              <div class="user-image">
+                <img
+                  src="https://shareville-media.s3.amazonaws.com/cache/41/2c/412cb688e429f372335f7527695b29b8.jpg"
+                  alt=""
+                />
+              </div>
+              <div class="user-name">Twitch Kappa</div>
+            </div>
+            <div class="share">
+              <img
+                class="share-icon"
+                src="./icons/social/share/white-share.svg"
+                alt="share"
+              />
+            </div>
+          </div>
+        </article>
+
+
+        <article class="post" id="post-8">
+          <div class="like-wrapper">
+            <div>
+              <img
+                class="like-icon"
+                src="./icons/social/like/like.svg"
+                alt="like"
+              />
+              <div class="likes-number">4523</div>
+            </div>
+          </div>
+          <div class="user-wrapper">
+            <div class="user">
+              <div class="user-image">
+                <img
+                  src="https://shareville-media.s3.amazonaws.com/cache/41/2c/412cb688e429f372335f7527695b29b8.jpg"
+                  alt=""
+                />
+              </div>
+              <div class="user-name">Twitch Kappa</div>
+            </div>
+            <div class="share">
+              <img
+                class="share-icon"
+                src="./icons/social/share/white-share.svg"
+                alt="share"
+              />
+            </div>
+          </div>
+        </article>
+
+
+        <article class="post" id="post-7">
+          <div class="like-wrapper">
+            <div>
+              <img
+                class="like-icon"
+                src="./icons/social/like/like.svg"
+                alt="like"
+              />
+              <div class="likes-number">4523</div>
+            </div>
+          </div>
+          <div class="user-wrapper">
+            <div class="user">
+              <div class="user-image">
+                <img
+                  src="https://shareville-media.s3.amazonaws.com/cache/41/2c/412cb688e429f372335f7527695b29b8.jpg"
+                  alt=""
+                />
+              </div>
+              <div class="user-name">Twitch Kappa</div>
+            </div>
+            <div class="share">
+              <img
+                class="share-icon"
+                src="./icons/social/share/white-share.svg"
+                alt="share"
+              />
+            </div>
+          </div>
+        </article>
+
+
+        <article class="post" id="post-6">
+          <div class="like-wrapper">
+            <div>
+              <img
+                class="like-icon"
+                src="./icons/social/like/like.svg"
+                alt="like"
+              />
+              <div class="likes-number">4523</div>
+            </div>
+          </div>
+          <div class="user-wrapper">
+            <div class="user">
+              <div class="user-image">
+                <img
+                  src="https://shareville-media.s3.amazonaws.com/cache/41/2c/412cb688e429f372335f7527695b29b8.jpg"
+                  alt=""
+                />
+              </div>
+              <div class="user-name">Twitch Kappa</div>
+            </div>
+            <div class="share">
+              <img
+                class="share-icon"
+                src="./icons/social/share/white-share.svg"
+                alt="share"
+              />
+            </div>
+          </div>
+        </article>
+
+        <article class="post" id="post-5">
+          <div class="like-wrapper">
+            <div>
+              <img
+                class="like-icon"
+                src="./icons/social/like/like.svg"
+                alt="like"
+              />
+              <div class="likes-number">4523</div>
+            </div>
+          </div>
+          <div class="user-wrapper">
+            <div class="user">
+              <div class="user-image">
+                <img
+                  src="https://shareville-media.s3.amazonaws.com/cache/41/2c/412cb688e429f372335f7527695b29b8.jpg"
+                  alt=""
+                />
+              </div>
+              <div class="user-name">Twitch Kappa</div>
+            </div>
+            <div class="share">
+              <img
+                class="share-icon"
+                src="./icons/social/share/white-share.svg"
+                alt="share"
+              />
+            </div>
+          </div>
+        </article>
+
+        <article class="post" id="post-4">
+          <div class="like-wrapper">
+            <div>
+              <img
+                class="like-icon"
+                src="./icons/social/like/like.svg"
+                alt="like"
+              />
+              <div class="likes-number">4523</div>
+            </div>
+          </div>
+          <div class="user-wrapper">
+            <div class="user">
+              <div class="user-image">
+                <img
+                  src="https://shareville-media.s3.amazonaws.com/cache/41/2c/412cb688e429f372335f7527695b29b8.jpg"
+                  alt=""
+                />
+              </div>
+              <div class="user-name">Twitch Kappa</div>
+            </div>
+            <div class="share">
+              <img
+                class="share-icon"
+                src="./icons/social/share/white-share.svg"
+                alt="share"
+              />
+            </div>
+          </div>
+        </article>
+
+        <article class="post" id="post-3">
+          <div class="like-wrapper">
+            <div>
+              <img
+                class="like-icon"
+                src="./icons/social/like/like.svg"
+                alt="like"
+              />
+              <div class="likes-number">4523</div>
+            </div>
+          </div>
+          <div class="user-wrapper">
+            <div class="user">
+              <div class="user-image">
+                <img
+                  src="https://shareville-media.s3.amazonaws.com/cache/41/2c/412cb688e429f372335f7527695b29b8.jpg"
+                  alt=""
+                />
+              </div>
+              <div class="user-name">Twitch Kappa</div>
+            </div>
+            <div class="share">
+              <img
+                class="share-icon"
+                src="./icons/social/share/white-share.svg"
+                alt="share"
+              />
+            </div>
+          </div>
+        </article>
+
+        <article class="post" id="post-2">
+          <div class="like-wrapper">
+            <div>
+              <img
+                class="like-icon"
+                src="./icons/social/like/like.svg"
+                alt="like"
+              />
+              <div class="likes-number">4523</div>
+            </div>
+          </div>
+          <div class="user-wrapper">
+            <div class="user">
+              <div class="user-image">
+                <img
+                  src="https://shareville-media.s3.amazonaws.com/cache/41/2c/412cb688e429f372335f7527695b29b8.jpg"
+                  alt=""
+                />
+              </div>
+              <div class="user-name">Twitch Kappa</div>
+            </div>
+            <div class="share">
+              <img
+                class="share-icon"
+                src="./icons/social/share/white-share.svg"
+                alt="share"
+              />
+            </div>
+          </div>
+        </article>
+
+        <article class="post" id="post-1">
+          <div class="like-wrapper">
+            <div>
+              <img
+                class="like-icon"
+                src="./icons/social/like/like.svg"
+                alt="like"
+              />
+              <div class="likes-number">4523</div>
+            </div>
+          </div>
+          <div class="user-wrapper">
+            <div class="user">
+              <div class="user-image">
+                <img
+                  src="https://shareville-media.s3.amazonaws.com/cache/41/2c/412cb688e429f372335f7527695b29b8.jpg"
+                  alt=""
+                />
+              </div>
+              <div class="user-name">Twitch Kappa</div>
+            </div>
+            <div class="share">
+              <img
+                class="share-icon"
+                src="./icons/social/share/white-share.svg"
+                alt="share"
+              />
+            </div>
+          </div>
+        </article>
+
+        <article class="modal-wrapper">
+          <div class="modal-window">
+            <header>
+              <div class="user-wrapper">
+                <div class="user">
+                  <div class="user-image"></div>
+                  <div class="user-name">Till Lindemann</div>
                 </div>
-                <div class="share-button share">
-                  <div>
-                    <img src="./icons/social/share/black-share.svg" alt="share">
-                    <div>share</div>
+              </div>
+              <div class="close-wrapper">
+                <img src="./icons/modal/close.svg" class="close" alt="close" />
+              </div>
+            </header>
+            <div class="modal-content">
+              <div class="content-wrapper">
+                <div class="content-image">
+                  <img src="./images/header/kaidi-guo.jpg" alt="" />
+                </div>
+                <div class="social-wrapper">
+                  <div class="like-wrapper">
+                    <div class="like">
+                      <img src="./icons/social/like/like.svg" alt="" />
+                    </div>
+                    <div class="number">123</div>
+                  </div>
+                  <div class="share-button share">
+                    <div>
+                      <img
+                        src="./icons/social/share/black-share.svg"
+                        alt="share"
+                      />
+                      <div>share</div>
+                    </div>
+                  </div>
+                  <div class="share-button download">
+                    <div>
+                      <img
+                        src="./icons/modal/download-arrow.svg"
+                        alt="download"
+                      />
+                      <div>download</div>
+                    </div>
                   </div>
                 </div>
-                <div class="share-button download">
-                  <div>
-                    <img src="./icons/modal/download-arrow.svg" alt="download">
-                    <div>download</div>
-                  </div>
-                </div>
-              </div>
-              <div class="modal-footer">
-                <div class="tag-wrapper">
-                  <h2>Tags</h2>
-                  <div class="tag-list">
-                    <div class="tag">mountains</div>
-                    <div class="tag">nature</div>
-                    <div class="tag">snow</div>
-                    <div class="tag">sunset</div>
+                <div class="modal-footer">
+                  <div class="tag-wrapper">
+                    <h2>Tags</h2>
+                    <div class="tag-list">
+                      <div class="tag">mountains</div>
+                      <div class="tag">nature</div>
+                      <div class="tag">snow</div>
+                      <div class="tag">sunset</div>
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
           </div>
-        </div>
-      </article>
+        </article>
+      </div>
 
-    </div>
-    <div class="pagination-wrapper">
-      <div class="pagination">
-        <button><img src="./icons/arrows/first.svg" alt="first"></button>
-        <button><img src="./icons/arrows/left-arrow.svg" alt="previous"></button> 
-        <!--button class="page-number">1</button>
-        <button class="page-number">2</button>
-        <button class="page-number">3</button>
-        <button class="page-number">4</button>
-        <button class="page-number current-page">5</button>
-        <button class="page-number">6</button>
-        <button class="page-number">7</button>
-        <button class="page-number">8</button>
-        <button class="page-number">9</button-->
+      <div class="pagination-wrapper">
+        <div class="pagination">
+          <button><img src="./icons/arrows/first.svg" alt="first" /></button>
+          <button>
+            <img src="./icons/arrows/left-arrow.svg" alt="previous" />
+          </button>
           <button class="page-number">1</button>
-        <button class="page-number">2</button>
-        <button class="page-number current-page">3</button>
-        <button class="page-number">4</button>
-        <button class="page-number">5</button>
-        <button><img src="./icons/arrows/right-arrow.svg" alt="next"></button>
-        <button><img src="./icons/arrows/last.svg" alt="last"></button>
+          <button class="page-number">2</button>
+          <button class="page-number current-page">3</button>
+          <button class="page-number">4</button>
+          <button class="page-number">5</button>
+          <button>
+            <img src="./icons/arrows/right-arrow.svg" alt="next" />
+          </button>
+          <button><img src="./icons/arrows/last.svg" alt="last" /></button>
+        </div>
       </div>
-    </div>
-  </article>
+    </article>
+   
 
-  <footer>
-    <div class="footer-wrapper">
-      <div class="social-buttons">
-        <a href="#"><img src="./icons/social/social-networks/telegram.svg" alt="telegrem"></a>
-        <a href="#"><img src="./icons/social/social-networks/twitter.svg" alt="twitter"></a>
-        <a href="#"><img src="./icons/social/social-networks/reddit.svg" alt="reddit"></a>
-        <a href="#"><img src="./icons/social/social-networks/instagram.svg" alt="instagram"></a>
+   <!--  <header id="about-us">
+      <div class="header-wrapper">
+        <h2>Gallery</h2>
+        <form action="">
+          <input type="text" name="text" placeholder="Search" id="search" />
+          <label for="search"
+            ><button>
+              <img
+                class="search-icon"
+                src="./icons/search/search.svg"
+                alt="search"
+              /></button
+          ></label>
+        </form>
+        <nav id="main-menu">
+          <ul class="inline-menu dark">
+            <li>Home</li>
+            <li class="dropdown">
+              <div class="sub-menu-contariner">
+                Browse
+                <img
+                  class="arrow-icon"
+                  src="./icons/arrows/sub-menu/white-down-arrow.svg"
+                  alt="Show sub menu"
+                />
+              </div>
+              <ul class="dropdown-menu">
+                <li class="sub-menu-wrapper">
+                  Popular
+                  <ul class="sub-menu light">
+                    <li class="sub-menu-wrapper">
+                      Popular
+                      <ul class="sub-menu dark">
+                        <li>Popular</li>
+                        <li>New</li>
+                        <li>Most shared</li>
+                      </ul>
+                    </li>
+                    <li>New</li>
+                    <li>Most shared</li>
+                  </ul>
+                </li>
+              </ul>
+            </li>
+            <li>Upload</li>
+            <li class="dropdown">
+              <img class="more-icon" src="./icons/menu/more.svg" alt="more" />
+              <ul class="dark main-menu-list sub-menu-click">
+                <li>Login</li>
+                <li>Sign Up</li>
+                <li>Home</li>
+                <li class="sub-menu-wrapper">
+                  Browse
+                  <img
+                    class="arrow-icon"
+                    src="./icons/arrows/sub-menu/white-down-arrow.svg"
+                    alt="Show sub menu"
+                  />
+                  <ul class="sub-menu light sub-menu-click">
+                    <li class="sub-menu-wrapper">
+                      <div>
+                        Popular
+                        <img
+                          class="arrow-icon"
+                          src="./icons/arrows/sub-menu/black-down-arrow.svg"
+                          alt="Show sub menu"
+                        />
+                      </div>
+
+                      <ul class="sub-menu dark sub-menu-click">
+                        <li>Popular</li>
+                        <li>New</li>
+                        <li>Most shared</li>
+                      </ul>
+                    </li>
+                    <li>New</li>
+                    <li>Most shared</li>
+                  </ul>
+                </li>
+                <li>Upload</li>
+                <li>About Us</li>
+              </ul>
+            </li>
+          </ul>
+          <ul class="burger">
+            <li class="dropdown">
+              <img class="burger-icon" src="./icons/menu/menu.svg" alt="menu" />
+              <ul class="dark main-menu-list sub-menu-click">
+                <li>Login</li>
+                <li>Sign Up</li>
+                <li>Home</li>
+                <li class="sub-menu-wrapper">
+                  <div>
+                    Browse
+                    <img
+                      class="arrow-icon"
+                      src="./icons/arrows/sub-menu/white-down-arrow.svg"
+                      alt="Show sub menu"
+                    />
+                  </div>
+                  <ul class="sub-menu light sub-menu-click">
+                    <li class="sub-menu-wrapper">
+                      <div>
+                        Popular
+                        <img
+                          class="arrow-icon"
+                          src="./icons/arrows/sub-menu/black-down-arrow.svg"
+                          alt="Show sub menu"
+                        />
+                      </div>
+
+                      <ul class="sub-menu dark sub-menu-click">
+                        <li>Popular</li>
+                        <li>New</li>
+                        <li>Most shared</li>
+                      </ul>
+                    </li>
+                    <li>New</li>
+                    <li>Most shared</li>
+                  </ul>
+                </li>
+                <li>Upload</li>
+                <li>About Us</li>
+              </ul>
+            </li>
+          </ul>
+        </nav>
       </div>
-      <div class="rights">Gallery © 2018</div>
-    </div>
-    <div>Icons made by <a href="http://www.freepik.com" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/"
-        title="Flaticon">www.flaticon.com</a> is licensed by <a href="http://creativecommons.org/licenses/by/3.0/"
-        title="Creative Commons BY 3.0" target="_blank">CC 3.0 BY</a></div>
-  </footer>
-</body>
-<script src="./scripts/main.js"></script>
+      <video autoplay controls muted loop>
+        <source
+          src="./video/WorkSpace-FreeHDStockFootage(NoCopyright)----Business,Technology,OfficeMeeting.mp4"
+          type="video/mp4"
+        />
+      </video>
+    </header>
 
+    <article role="main" class="about-us">
+      <header>
+        <nav id="bredcrums">
+          <button class="empty-button"><h1>Home</h1></button
+          ><img
+            class="right-arrow"
+            src="./icons/arrows/right-arrow.svg"
+            alt=""
+          />
+          <h1>About Us</h1>
+        </nav>
+      </header>
+
+      <article class="block-wrapper">
+        <article class="block photo">
+          <img src="./images/blocks/annie-spratt-294450-unsplash.jpg" alt="" />
+        </article>
+        <article class="block text">
+          <h2>Hwo we are</h2>
+          <div>
+            Gallery has grown into an industry-leading photography community.
+            It’s become a source of inspiration for everyone from award-winning
+            writers like Deepak Chopra to industry-titans like Apple, and
+            millions of creators worldwide. <a href="">Read more...</a>
+          </div>
+        </article>
+      </article>
+      <article class="block-wrapper">
+        <article class="block photo">
+          <img src="./images/blocks/rawpixel-626044-unsplash.jpg" alt="" />
+        </article>
+        <article class="block text">
+          <h2>
+            Unsplash raises $8 million to build a new economy around
+            photography.
+          </h2>
+          <div>
+            The Gallery ecosystem is pushing the impact of photography further
+            than ever before. Our aim is to make photography a universally
+            accessible art form. The purpose of raising this investment is to
+            build a new type of economic future for photography when it is set
+            free. <a href="">Read more...</a>
+          </div>
+        </article>
+      </article>
+    </article> -->
+
+    <footer>
+      <div class="footer-wrapper">
+        <div class="social-buttons">
+          <a href="#"
+            ><img
+              src="./icons/social/social-networks/telegram.svg"
+              alt="telegrem"
+          /></a>
+          <a href="#"
+            ><img src="./icons/social/social-networks/twitter.svg" alt="twitter"
+          /></a>
+          <a href="#"
+            ><img src="./icons/social/social-networks/reddit.svg" alt="reddit"
+          /></a>
+          <a href="#"
+            ><img
+              src="./icons/social/social-networks/instagram.svg"
+              alt="instagram"
+          /></a>
+        </div>
+        <div class="rights">Gallery © 2018</div>
+      </div>
+      <div>
+        Icons made by
+        <a href="http://www.freepik.com" title="Freepik">Freepik</a> from
+        <a href="https://www.flaticon.com/" title="Flaticon"
+          >www.flaticon.com</a
+        >
+        is licensed by
+        <a
+          href="http://creativecommons.org/licenses/by/3.0/"
+          title="Creative Commons BY 3.0"
+          target="_blank"
+          >CC 3.0 BY</a
+        >
+      </div>
+    </footer>
+  </body>
+  <script src="./scripts/main.js"></script>
 </html>

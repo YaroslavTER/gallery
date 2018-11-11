@@ -1,0 +1,23 @@
+article a {
+  color: rgb(78, 78, 78);
+}
+
+article a:hover {
+  color: rgb(126, 126, 126);
+}
+
+article a:visited {
+  color: rgb(41, 41, 41);
+}
+
+article a {
+  color: rgb(78, 78, 78);
+}
+
+footer a:hover {
+  color: rgb(221, 221, 221);
+}
+
+footer a:visited {
+  color: rgb(218, 216, 216);
+}

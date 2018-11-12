@@ -18,5 +18,11 @@ visibility.apply([
     event: "click",
     className: "modal-wrapper",
     displayValue: { setValueTo: "modal-wrapper", value: "none" }
+  },
+  {
+    domElementClass: "inline-menu",
+    event: "click",
+    className: "qwe",
+    displayValue: { setValueTo: "modal-wrapper", value: "grid" }
   }
 ]);

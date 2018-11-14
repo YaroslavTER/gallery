@@ -29,15 +29,15 @@
 
           <ul class="inline-menu dark">
 
-            <li>Home</li>
-            <li class="dropdown parent top-level-menu">
+            <li id="tm:0">Home</li>
+            <li id="tm:1" class="dropdown parent top-level-menu">
                 Browse
                 <img
                   class="arrow-icon"
                   src="./icons/arrows/sub-menu/white-down-arrow.svg"
                   alt="Show sub menu"
                 />
-              <ul class="dropdown-menu sub-menu-click">
+              <ul id="tm:1-sub:0" class="dropdown-menu sub-menu-click">
                 <li class="dropdown sub-menu-wrapper parent">
                   Popular
                   <img
@@ -45,15 +45,15 @@
                     src="./icons/arrows/sub-menu/white-down-arrow.svg"
                     alt="Show sub menu"
                   />
-                  <ul class="sub-menu-click sub-menu light">
+                  <ul id="tm:1-sub:1" class="sub-menu-click sub-menu light">
                     <li class="sub-menu-wrapper parent">
-                      Popular
+                      Popular1
                       <img
                         class="arrow-icon"
                         src="./icons/arrows/sub-menu/white-down-arrow.svg"
                         alt="Show sub menu"
                       />
-                      <ul class="sub-menu dark sub-menu-click">
+                      <ul id="tm:1-sub:2" class="sub-menu dark sub-menu-click">
                         <li>Popular</li>
                         <li>New</li>
                         <li>Most shared</li>
@@ -65,10 +65,10 @@
                 </li>
               </ul>
             </li>
-            <li>Upload</li>
-            <li class="dropdown parent top-level-menu">
+            <li id="tm:2">Upload</li>
+            <li id="tm:3" class="dropdown parent top-level-menu">
               <img class="more-icon" src="./icons/menu/more.svg" alt="more" />
-              <ul class="dark main-menu-list sub-menu-click">
+              <ul id="tm:3-sub:0" class="dark main-menu-list sub-menu-click">
                 <li>Login</li>
                 <li>Sign Up</li>
                 <li>Home</li>
@@ -79,7 +79,7 @@
                     src="./icons/arrows/sub-menu/white-down-arrow.svg"
                     alt="Show sub menu"
                   />
-                  <ul class="sub-menu light sub-menu-click">
+                  <ul id="tm:3-sub:1" class="sub-menu light sub-menu-click">
                     <li class="sub-menu-wrapper parent">
                         Popular
                         <img
@@ -88,7 +88,7 @@
                           alt="Show sub menu"
                         />
 
-                      <ul class="sub-menu dark sub-menu-click">
+                      <ul id="tm:3-sub:2" class="sub-menu dark sub-menu-click">
                         <li>Popular</li>
                         <li>New</li>
                         <li>Most shared</li>
@@ -598,8 +598,11 @@
       </div>
     </footer>
   </body>
+  <script src="./scripts/display/script.js"></script>
+  <script src="./scripts/menu/script.js"></script>
   <script src="./scripts/modal-window/script.js"></script>
   <script src="./scripts/menu/script.js"></script>
+  <script src="./scripts/event-action/script.js"></script>
   <script src="./scripts/main.js"></script>
 </html>
 

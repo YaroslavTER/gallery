@@ -1,31 +1,34 @@
-function ModalWindow() {
-  const applyAction = (className, action) => {
+class ModalWindow {
+  constructor() {}
+
+  applyAction(className, action) {
     const elements = document.getElementsByClassName(className);
     [...elements].forEach(element => {
       action(element);
     });
-  };
-
-  const showModalWindow = className => {
+  }
+  showModalWindow(className) {
     applyAction(className, Display.show);
-  };
-
-  const hideModalWindow = className => {
+  }
+  hideModalWindow(className) {
     applyAction(className, Display.hide);
-  };
+  }
 
-  this.handleModalWindow = target => {
+  handleModalWindow(target) {
     const modalWrapperClassName = "modal-wrapper";
-    switch (target.className) {
-      case "post":
-        showModalWindow(modalWrapperClassName);
-        break;
-      case "close":
-        hideModalWindow(modalWrapperClassName);
-        break;
-      case modalWrapperClassName:
-        hideModalWindow(modalWrapperClassName);
-        break;
+    console.log(this, target);
+    if (target) {
+      switch (target.className) {
+        case "post":
+          showModalWindow(modalWrapperClassName);
+          break;
+        case "close":
+          hideModalWindow(modalWrapperClassName);
+          break;
+        case modalWrapperClassName:
+          hideModalWindow(modalWrapperClassName);
+          break;
+      }
     }
-  };
+  }
 }

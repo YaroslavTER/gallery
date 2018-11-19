@@ -1,89 +1,111 @@
-function Menu() {
-  let history = [];
-  let prevTopMenu = null;
+class Menu {
+  constructor() {
+    this._history = [];
+    this._prevTopMenu = null;
+    this._menuElementClassName = {
+      topMenu: "top-level-menu",
+      parent: "parent",
+      icon: {
+        more: "more-icon",
+        arrow: "arrow-icon"
+      },
+      subMenu: "sub-menu-click"
+    };
+  }
 
-  const getMenuElement = target => {
-    let menuElement = null;
-    if (target.className.includes("parent")) {
-      menuElement = target.firstElementChild;
+  getMenuElement(target) {
+    if (target.className.includes(this._menuElementClassName.parent)) {
+      return target.firstElementChild;
     } else if (
-      target.className.includes("arrow-icon") ||
-      target.className.includes("more-icon")
+      target.className.includes(this._menuElementClassName.icon.arrow) ||
+      target.className.includes(this._menuElementClassName.icon.more)
     ) {
-      menuElement = target;
+      return target;
     }
-    return menuElement;
-  };
+  }
 
-  const getSubMenu = menuElement => {
-    if (menuElement.className.includes("sub-menu-click")) {
-      subMenu = menuElement;
+  getSubMenu(menuElement) {
+    if (menuElement.className.includes(this._menuElementClassName.subMenu)) {
+      return menuElement;
     } else if (
-      menuElement.nextElementSibling.className.includes("sub-menu-click")
+      menuElement.nextElementSibling.className.includes(
+        this._menuElementClassName.subMenu
+      )
     ) {
-      subMenu = menuElement.nextElementSibling;
+      return menuElement.nextElementSibling;
     }
-    return subMenu;
-  };
+  }
 
-  const getSubMenuLevel = subMenu =>
-    Number(subMenu.id.split("-")[1].split(":")[1]);
+  getSubMenuLevel(subMenu) {
+    return Number(subMenu.id.split("-")[1].split(":")[1]);
+  }
 
-  const addToHistory = subMenu => {
-    const subMenuLevel = getSubMenuLevel(subMenu);
-    const filteredArray = history.filter(element => {
+  addToHistory(subMenu) {
+    const subMenuLevel = this.getSubMenuLevel(subMenu);
+    const filteredArray = this._history.filter(element => {
       return element.id === subMenu.id && element.id.split("-");
     });
     if (subMenuLevel !== 0 && filteredArray.length === 0) {
-      history.push(subMenu);
+      this._history.push(subMenu);
     }
-  };
+  }
 
-  const removeFromHistory = subMenu => {
-    const removeIndex = history.indexOf(subMenu);
-    const subMenuLevel = getSubMenuLevel(subMenu);
+  removeFromHistory(subMenu) {
+    const removeIndex = this._history.indexOf(subMenu);
+    const subMenuLevel = this.getSubMenuLevel(subMenu);
     if (subMenuLevel !== 0) {
-      history.splice(removeIndex, 1);
+      this._history.splice(removeIndex, 1);
     }
-  };
+  }
 
-  const hideAllSubMenus = () => {
-    history.forEach(element => Display.hide(element));
-    [].concat(history).forEach(element => removeFromHistory(element));
-  };
+  hideAllSubMenus() {
+    this._history.forEach(element => Display.hide(element));
+    [].concat(history).forEach(element => this.removeFromHistory(element));
+  }
 
-  this.handleMenu = target => {
-    let menuElement = getMenuElement(target);
+  showMenuElement(subMenu) {
+    const subMenuLevel = this.getSubMenuLevel(subMenu);
+    if (subMenuLevel === 0) {
+      if (this._prevTopMenu === null) {
+        Display.show(subMenu);
+        this._prevTopMenu = subMenu;
+      } else if (this._prevTopMenu !== null) {
+        this.hideAllSubMenus();
+        Display.hide(this._prevTopMenu);
+        this._prevTopMenu = null;
+        Display.show(subMenu);
+        this._prevTopMenu = subMenu;
+      }
+    } else if (subMenuLevel > 0) {
+      Display.show(subMenu);
+    }
+  }
+
+  hideMenuElement(subMenu) {
+    Display.hide(subMenu);
+    if (subMenu.className.includes(this._menuElementClassName.subMenu)) {
+      this.hideAllSubMenus();
+      this.removeFromHistory(subMenu);
+    }
+    if (
+      subMenu.parentElement.className.includes(
+        this._menuElementClassName.topMenu
+      )
+    ) {
+      this.hideAllSubMenus();
+    }
+  }
+
+  handleMenu(target) {
+    let menuElement = this.getMenuElement(target);
     if (menuElement) {
-      let subMenu = getSubMenu(menuElement);
-      addToHistory(subMenu);
-
+      let subMenu = this.getSubMenu(menuElement);
+      this.addToHistory(subMenu);
       if (subMenu.style.display === "" || subMenu.style.display === "none") {
-        const subMenuLevel = getSubMenuLevel(subMenu);
-        if (subMenuLevel === 0) {
-          if (prevTopMenu === null) {
-            Display.show(subMenu);
-            prevTopMenu = subMenu;
-          } else if (prevTopMenu !== null) {
-            hideAllSubMenus();
-            Display.hide(prevTopMenu);
-            prevTopMenu = null;
-            Display.show(subMenu);
-            prevTopMenu = subMenu;
-          }
-        } else if (subMenuLevel > 0) {
-          Display.show(subMenu);
-        }
+        this.showMenuElement(subMenu);
       } else if (subMenu.style.display === "grid") {
-        Display.hide(subMenu);
-        if (subMenu.className.includes("sub-menu-click")) {
-          hideAllSubMenus();
-          removeFromHistory(subMenu);
-        }
-        if (subMenu.parentElement.className.includes("top-level-menu")) {
-          hideAllSubMenus();
-        }
+        this.hideMenuElement(subMenu);
       }
     }
-  };
+  }
 }

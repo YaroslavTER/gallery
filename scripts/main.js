@@ -1,14 +1,15 @@
 const eventAction = new EventAction();
 const menu = new Menu();
 const modalWindow = new ModalWindow();
+const pagination = new Pagination([], 10, 2);
 const event = "click";
-eventAction.setDisplayOnElementEvent(
-  document.getElementsByClassName("inline-menu"),
-  event,
-  [menu.handleMenu]
-);
-eventAction.setDisplayOnElementEvent(
-  document.getElementsByClassName("posts-wrapper"),
+eventAction.setDisplayOnElementEvent(document, event, [
+  { action: menu.handleMenu, _this: menu },
+  modalWindow.handleModalWindow
+]);
+/*eventAction.setDisplayOnElementEvent(
+  document.getElementsByClassName("modal-wrapper"),
   event,
   [modalWindow.handleModalWindow]
 );
+pagination.calculate(3);*/

@@ -7,28 +7,33 @@ class ModalWindow {
       action(element);
     });
   }
+
   showModalWindow(className) {
-    applyAction(className, Display.show);
+    this.applyAction(className, Display.show);
   }
+
   hideModalWindow(className) {
-    applyAction(className, Display.hide);
+    this.applyAction(className, Display.hide);
   }
 
   handleModalWindow(target) {
     const modalWrapperClassName = "modal-wrapper";
-    console.log(this, target);
     if (target) {
       switch (target.className) {
         case "post":
-          showModalWindow(modalWrapperClassName);
+          this.showModalWindow(modalWrapperClassName);
           break;
         case "close":
-          hideModalWindow(modalWrapperClassName);
+          this.hideModalWindow(modalWrapperClassName);
           break;
         case modalWrapperClassName:
-          hideModalWindow(modalWrapperClassName);
+          this.hideModalWindow(modalWrapperClassName);
           break;
       }
     }
+  }
+
+  handle(target) {
+    console.log(target);
   }
 }

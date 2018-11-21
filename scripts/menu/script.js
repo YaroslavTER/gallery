@@ -70,7 +70,7 @@ class Menu {
         Display.show(subMenu);
         this._prevTopMenu = subMenu;
       } else if (this._prevTopMenu !== null) {
-        this.hideAllSubMenus();
+        //this.hideAllSubMenus();
         Display.hide(this._prevTopMenu);
         this._prevTopMenu = null;
         Display.show(subMenu);
@@ -83,8 +83,9 @@ class Menu {
 
   hideMenuElement(subMenu) {
     Display.hide(subMenu);
+    console.log(this._history);
     if (subMenu.className.includes(this._menuElementClassName.subMenu)) {
-      this.hideAllSubMenus();
+      //this.hideAllSubMenus();
       this.removeFromHistory(subMenu);
     }
     if (
@@ -92,7 +93,7 @@ class Menu {
         this._menuElementClassName.topMenu
       )
     ) {
-      this.hideAllSubMenus();
+      //this.hideAllSubMenus();
     }
   }
 

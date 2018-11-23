@@ -11,6 +11,10 @@ class Menu {
       },
       subMenu: "sub-menu-click"
     };
+    this.separator = {
+      dash: "-",
+      colon: ":"
+    };
   }
 
   getMenuElement(target) {
@@ -37,13 +41,19 @@ class Menu {
   }
 
   getSubMenuLevel(subMenu) {
-    return Number(subMenu.id.split("-")[1].split(":")[1]);
+    if (subMenu.id) {
+      return Number(
+        subMenu.id.split(this.separator.dash)[1].split(this.separator.colon)[1]
+      );
+    } else {
+      return null;
+    }
   }
 
   addToHistory(subMenu) {
     const subMenuLevel = this.getSubMenuLevel(subMenu);
     const filteredArray = this._history.filter(element => {
-      return element.id === subMenu.id && element.id.split("-");
+      return element.id === subMenu.id && element.id.split(this.separator.dash);
     });
     if (subMenuLevel !== 0 && filteredArray.length === 0) {
       this._history.push(subMenu);
@@ -70,8 +80,8 @@ class Menu {
         Display.show(subMenu);
         this._prevTopMenu = subMenu;
       } else if (this._prevTopMenu !== null) {
-        //this.hideAllSubMenus();
         Display.hide(this._prevTopMenu);
+        this.hideAllSubMenus();
         this._prevTopMenu = null;
         Display.show(subMenu);
         this._prevTopMenu = subMenu;
@@ -84,7 +94,7 @@ class Menu {
   hideMenuElement(subMenu) {
     Display.hide(subMenu);
     if (subMenu.className.includes(this._menuElementClassName.subMenu)) {
-      //this.hideAllSubMenus();
+      this.hideAllSubMenus();
       this.removeFromHistory(subMenu);
     }
     if (
@@ -92,7 +102,7 @@ class Menu {
         this._menuElementClassName.topMenu
       )
     ) {
-      //this.hideAllSubMenus();
+      this.hideAllSubMenus();
     }
   }
 

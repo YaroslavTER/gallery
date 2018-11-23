@@ -3,6 +3,7 @@ const menu = new Menu(); //chnage inline-menu display on inline-block
 const itemsPerPage = 10;
 const modalWindow = new ModalWindow(itemsPerPage);
 const pagination = new Pagination(postList, itemsPerPage, 4);
+const sort = new Sort();
 const event = "click";
 
 window.onload = () => {
@@ -15,6 +16,12 @@ window.onload = () => {
     ...document.getElementsByClassName("pagination"),
     event,
     target => pagination.handlePagination(target)
+  );
+
+  eventAction.setDisplayOnElementEvent(
+    ...document.getElementsByClassName("sort"),
+    event,
+    target => sort.handleSort(target)
   );
 
   eventAction.setDisplayOnElementEvent(

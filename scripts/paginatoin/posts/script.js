@@ -3,12 +3,12 @@ class Posts {
 }
 let postList = [
   {
-    image: { url: "./images/header/kaidi-guo.jpg" },
+    image: { url: "./images/header/alessandro-sacchi.jpg" },
     id: "post-0",
     user: {
       name: "Till Lindemann",
       image: {
-        src: "../../../images/users/user/till-lindemann.jpg" //css
+        src: "./images/users/user/till-lindemann.jpg" //css
       }
     },
     share: {
@@ -26,7 +26,9 @@ let postList = [
     ]
   },
   {
-    image: { url: "./images/header/kaidi-guo.jpg" },
+    image: {
+      url: "./images/header/alessandro-sacchi.jpg"
+    },
     id: "post-1",
     user: {
       name: "Till Lindemann",

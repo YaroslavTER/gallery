@@ -7,6 +7,9 @@ class PaginationGenerator extends CustomDOMGenerator {
           { name: "class", value: "post" },
           { name: "id", value: `post-${(currentPage - 1) * 10 + index}` }
         ],
+        style: `#post-${index} {
+                  background-image: url("${post.image.url}");
+                }`,
         childList: [
           {
             name: "div",

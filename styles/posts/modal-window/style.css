@@ -20,7 +20,7 @@
 }
 
 .modal-window .user-image {
-  background-image: url("../../../images/users/till-lindemann.jpg");
+  /* background-image: url("../../../images/users/user/till-lindemann.jpg"); */
   overflow: hidden;
   position: relative;
   background-size: cover;
@@ -111,7 +111,7 @@
   padding: 10px;
 }
 
-.modal-window .like-wrapper {
+.modal-window .like-wrapper .like {
   display: -ms-grid;
   display: grid;
   grid-template-columns: 30px 1fr;
@@ -184,6 +184,7 @@
 .tag-list .tag {
   display: inline-block;
   padding: 5px;
+  margin-right: 5px;
   background-color: rgb(193, 193, 196);
   color: rgb(68, 68, 68);
 }

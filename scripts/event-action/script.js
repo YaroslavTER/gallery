@@ -9,14 +9,12 @@ class EventAction {
   }
 
   setDisplayOnElementEvent(DOMElement, elementEvent, wrapper) {
-    //actionList.forEach(wrapper => {
-    if (HTMLCollection.prototype.isPrototypeOf(DOMElement)) {
+    if (DOMElement instanceof Array) {
       [...DOMElement].forEach(element => {
         this.applyAction(element, elementEvent, wrapper);
       });
     } else {
       this.applyAction(DOMElement, elementEvent, wrapper);
     }
-    //});
   }
 }

@@ -1,23 +1,28 @@
 const eventAction = new EventAction();
-const menu = new Menu();
-const modalWindow = new ModalWindow();
-const pagination = new Pagination(postList, 10, 4);
+const menu = new Menu(); //chnage inline-menu display on inline-block
+const itemsPerPage = 10;
+const pagination = new Pagination(postList, itemsPerPage, 4);
+const modalWindow = new ModalWindow(itemsPerPage, pagination);
 const event = "click";
-/*
-eventAction.setDisplayOnElementEvent(document, event, target =>
-  menu.handleMenu(target)
-);*/
+
 window.onload = () => {
-  eventAction.setDisplayOnElementEvent(
-    document.getElementsByClassName("posts-wrapper"),
-    event,
-    target => modalWindow.handleModalWindow(target)
+  eventAction.setDisplayOnElementEvent(document, event, target =>
+    menu.handleMenu(target)
   );
 
-  pagination.goToPage(3);
+  pagination.goToPage(1);
   eventAction.setDisplayOnElementEvent(
-    document.getElementsByClassName("pagination"),
+    ...document.getElementsByClassName("pagination"),
     event,
     target => pagination.handlePagination(target)
+  );
+
+  eventAction.setDisplayOnElementEvent(
+    [
+      ...document.getElementsByClassName("posts-wrapper"),
+      ...document.getElementsByClassName("modal-wrapper")
+    ],
+    event,
+    target => modalWindow.handleModalWindow(target)
   );
 };

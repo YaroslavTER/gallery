@@ -1,11 +1,14 @@
-class Pagination {
+class Pagination extends PaginationGenerator {
   constructor(posts, itemsPerPage, offset) {
+    super();
     this._posts = posts;
     this._itemsPerPage = itemsPerPage;
     this._currentPage = null;
     this._offset = offset;
     this._buttonList = [];
-    this._length = posts.length;
+    this._length = Math.round(posts.length / this._itemsPerPage); //8;
+    //фіксована кількість елементів
+    //;
   }
 
   changeOffsetIf(condition, action) {
@@ -27,8 +30,16 @@ class Pagination {
     });
   }
 
+  /*
+  << < 1* 2 3 4 5 6 7 > >>
+  << < 1 2* 3 4 5 6 7 > >>
+  << < 1 2 3* 4 5 6 7 > >>
+  << < 1 2 3 4* 5 6 7 > >>
+  << < 2 3 4 5* 6 7 8 > >>
+  << < 3 4 5 6 7 8  > >>
+  */
   getRightOffset(currentPage) {
-    const isOffsetToBig = currentPage + this._offset >= this._length;
+    const isOffsetToBig = this._offset >= this._length;
     return this.changeOffsetIf(isOffsetToBig, () => {
       let counter = 0;
       while (currentPage + counter < this._length) {
@@ -45,104 +56,33 @@ class Pagination {
   calculate(currentPage) {
     const leftOffset = this.getLeftOffset(currentPage);
     const rightOffset = this.getRightOffset(currentPage);
+    let auxLeftOffset = 0;
+    let auxRightOffset = 0;
+    if (
+      leftOffset +
+        this._offset -
+        rightOffset +
+        rightOffset +
+        this._offset -
+        leftOffset +
+        1 <=
+      this._length
+    ) {
+      auxLeftOffset = this._offset - rightOffset;
+      auxRightOffset = this._offset - leftOffset;
+    }
     this._currentPage = currentPage;
-    const numeration = this.getArray(leftOffset)
+    const numeration = this.getArray(leftOffset + auxLeftOffset)
       .map(element => currentPage - element)
       .reverse()
       .concat([currentPage])
-      .concat(this.getArray(rightOffset).map(element => currentPage + element));
+      .concat(
+        this.getArray(rightOffset + auxRightOffset).map(
+          element => currentPage + element
+        )
+      );
 
     return numeration;
-  }
-
-  generatePaginationElements(numeration) {
-    let buttonList = [
-      {
-        name: "button",
-        attributes: [{ name: "id", value: "pg-first-page" }],
-        childList: [
-          {
-            name: "img",
-            attributes: [
-              { name: "src", value: "./icons/arrows/first.svg" },
-              { name: "alt", value: "first" }
-            ]
-          }
-        ]
-      },
-      {
-        name: "button",
-        isParent: true,
-        attributes: [{ name: "id", value: "pg-previous-page" }],
-        childList: [
-          {
-            name: "img",
-            attributes: [
-              { name: "src", value: "./icons/arrows/left-arrow.svg" },
-              { name: "alt", value: "previous" }
-            ]
-          }
-        ]
-      }
-    ]
-      .concat(
-        numeration.map(number => {
-          const isCurrentPage = number === this._currentPage;
-          return {
-            name: "button",
-            attributes: [
-              {
-                name: "class",
-                value: "page-number" + (isCurrentPage ? " current-page" : "")
-              },
-              { name: "id", value: `pg-number:${number}-page` }
-            ],
-            childList: [{ text: number, isParent: true }]
-          };
-        })
-      )
-      .concat([
-        {
-          name: "button",
-          attributes: [{ name: "id", value: "pg-next-page" }],
-          childList: [
-            {
-              name: "img",
-              attributes: [
-                { name: "src", value: "./icons/arrows/right-arrow.svg" },
-                { name: "alt", value: "first" }
-              ]
-            }
-          ]
-        },
-        {
-          name: "button",
-          isParent: true,
-          attributes: [{ name: "id", value: "pg-last-page" }],
-          childList: [
-            {
-              name: "img",
-              attributes: [
-                { name: "src", value: "./icons/arrows/last.svg" },
-                { name: "alt", value: "previous" }
-              ]
-            }
-          ]
-        }
-      ]);
-    buttonList.forEach(button => {
-      CustomDOMGenerator.generateElement(
-        button,
-        document.getElementById("pg-target-gen")
-      );
-    });
-  }
-
-  removeAllChildElements(id) {
-    const domElement = document.getElementById(id);
-    while (domElement.firstElementChild) {
-      domElement.removeChild(domElement.firstElementChild);
-    }
   }
 
   handleNumber(identifier) {
@@ -152,114 +92,24 @@ class Pagination {
 
   getPostsForRender(currentPage) {
     return this._posts.slice(
-      currentPage - 1,
-      currentPage + this._itemsPerPage - 1
+      (currentPage - 1) * this._itemsPerPage,
+      currentPage * this._itemsPerPage
     );
   }
 
   goToPage(currentPage) {
     this.removeAllChildElements("pg-target-gen");
-    this.generatePaginationElements(this.calculate(currentPage));
+    this.generatePaginationElements(this.calculate(currentPage), currentPage);
     const pagePostList = this.getPostsForRender(currentPage);
     this.removeAllChildElements("posts-target-gen");
-    this.generatePosts(pagePostList);
+    this.generatePosts(pagePostList, this._currentPage);
   }
 
-  generatePosts(postList) {
-    console.log(this._currentPage, postList.length);
-    const domPostList = postList
-      .map((post, index) => ({
-        name: "article",
-        attributes: [
-          { name: "class", value: "post" },
-          { name: "id", value: `post-${index}` }
-        ],
-        childList: [
-          {
-            name: "div",
-            attributes: [{ name: "class", value: "like-wrapper" }],
-            childList: [
-              {
-                name: "div",
-                childList: [
-                  {
-                    name: "img",
-                    attributes: [
-                      { name: "class", value: "like-icon" },
-                      { name: "src", value: "./icons/social/like/like.svg" },
-                      { name: "alt", value: "like" }
-                    ]
-                  },
-                  {
-                    name: "div",
-                    isParent: true,
-                    attributes: [{ name: "class", value: "likes-number" }],
-                    childList: [{ text: post.like.counter, isParent: true }]
-                  }
-                ]
-              }
-            ]
-          },
-          {
-            name: "div",
-            attributes: [{ name: "class", value: "user-wrapper" }],
-            childList: [
-              {
-                name: "div",
-                attributes: [{ name: "class", value: "user" }],
-                childList: [
-                  {
-                    name: "div",
-                    attributes: [{ name: "class", value: "user-image" }],
-                    childList: [
-                      {
-                        name: "img",
-                        attributes: [
-                          { name: "src", value: post.user.image.src }
-                        ]
-                      }
-                    ]
-                  },
-                  {
-                    name: "div",
-                    attributes: [{ name: "class", value: "user-name" }],
-                    childList: [
-                      {
-                        text: `${post.user.name}${index}${this._currentPage}`,
-                        isParent: true
-                      }
-                    ]
-                  }
-                ]
-              },
-              {
-                name: "div",
-                attributes: [{ name: "class", value: "share" }],
-                childList: [
-                  {
-                    name: "img",
-                    attributes: [
-                      { name: "class", value: "share-icon" },
-                      {
-                        name: "src",
-                        value: "./icons/social/share/white-share.svg"
-                      },
-                      { name: "alt", value: "share" }
-                    ]
-                  }
-                ]
-              }
-            ]
-          }
-        ]
-      }))
-      .reverse();
-    domPostList.forEach(button => {
-      CustomDOMGenerator.generateElement(
-        button,
-        document.getElementById("posts-target-gen")
-      );
-    });
+  removeAllChildElements(id) {
+    const domElement = document.getElementById(id);
+    while (domElement.firstElementChild) {
+      domElement.removeChild(domElement.firstElementChild);
+    }
   }
 
   /* class="share-icon"
@@ -342,9 +192,4 @@ class Pagination {
       this.handleArrows(identifier);
     }
   }
-  /*
-  generate(currentPage) {
-    
-    this.generatePaginationElements(this.calculate(currentPage));
-  }*/
 }

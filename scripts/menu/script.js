@@ -83,7 +83,6 @@ class Menu {
 
   hideMenuElement(subMenu) {
     Display.hide(subMenu);
-    console.log(this._history);
     if (subMenu.className.includes(this._menuElementClassName.subMenu)) {
       //this.hideAllSubMenus();
       this.removeFromHistory(subMenu);
@@ -106,6 +105,10 @@ class Menu {
         this.showMenuElement(subMenu);
       } else if (subMenu.style.display === "grid") {
         this.hideMenuElement(subMenu);
+      }
+    } else {
+      if (this._history.length > 0) {
+        this.hideAllSubMenus();
       }
     }
   }

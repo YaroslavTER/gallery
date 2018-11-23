@@ -1,6 +1,5 @@
-class Pagination extends PaginationGenerator {
+class Pagination {
   constructor(posts, itemsPerPage, offset) {
-    super();
     this._posts = posts;
     this._itemsPerPage = itemsPerPage;
     this._currentPage = null;
@@ -90,26 +89,26 @@ class Pagination extends PaginationGenerator {
     this.goToPage(number);
   }
 
-  getPostsForRender(currentPage) {
-    return this._posts.slice(
-      (currentPage - 1) * this._itemsPerPage,
-      currentPage * this._itemsPerPage
+  static getPostsForRender(currentPage, itemsPerPage, posts) {
+    return posts.slice(
+      (currentPage - 1) * itemsPerPage,
+      currentPage * itemsPerPage
     );
   }
 
   goToPage(currentPage) {
-    this.removeAllChildElements("pg-target-gen");
-    this.generatePaginationElements(this.calculate(currentPage), currentPage);
-    const pagePostList = this.getPostsForRender(currentPage);
-    this.removeAllChildElements("posts-target-gen");
-    this.generatePosts(pagePostList, this._currentPage);
-  }
-
-  removeAllChildElements(id) {
-    const domElement = document.getElementById(id);
-    while (domElement.firstElementChild) {
-      domElement.removeChild(domElement.firstElementChild);
-    }
+    CustomDOMGenerator.removeAllChildElements("pg-target-gen");
+    PaginationGenerator.generatePaginationElements(
+      this.calculate(currentPage),
+      currentPage
+    );
+    const pagePostList = Pagination.getPostsForRender(
+      currentPage,
+      this._itemsPerPage,
+      this._posts
+    );
+    CustomDOMGenerator.removeAllChildElements("posts-target-gen");
+    PaginationGenerator.generatePosts(pagePostList, this._currentPage);
   }
 
   /* class="share-icon"

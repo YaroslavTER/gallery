@@ -1,10 +1,5 @@
-class ModalWindowGenerator extends PaginationGenerator {
-  constructor() {
-    super();
-  }
-
-  generateModalWindow(post, targetGen) {
-    console.log(post);
+class ModalWindowGenerator extends CustomDOMGenerator {
+  static generateModalWindow(post, targetGen) {
     this.generateElement(
       {
         name: "div",

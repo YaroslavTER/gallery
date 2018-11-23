@@ -1,7 +1,5 @@
 class CustomDOMGenerator {
-  constructor() {}
-
-  appendChildStyle(createdElement, element) {
+  static appendChildStyle(createdElement, element) {
     let css = document.createElement("style");
     css.type = "text/css";
     let style = element.style;
@@ -15,7 +13,7 @@ class CustomDOMGenerator {
     createdElement.appendChild(css);
   }
 
-  generateElement(element, parent) {
+  static generateElement(element, parent) {
     let createdElement = element.name
       ? document.createElement(element.name)
       : null;
@@ -33,24 +31,27 @@ class CustomDOMGenerator {
     }
     if (element.childList) {
       element.childList.forEach(childElement => {
-        this.generateElement(childElement, createdElement);
+        CustomDOMGenerator.generateElement(childElement, createdElement);
       });
     }
     if (createdElement) {
       if (element.style) {
-        this.appendChildStyle(createdElement, element);
+        CustomDOMGenerator.appendChildStyle(createdElement, element);
       }
       parent.appendChild(createdElement);
     }
   }
 
-  generateElements(elementList, targetId) {
+  static generateElements(elementList, targetId) {
     elementList.forEach(button => {
-      this.generateElement(button, document.getElementById(targetId));
+      CustomDOMGenerator.generateElement(
+        button,
+        document.getElementById(targetId)
+      );
     });
   }
 
-  removeAllChildElements(id) {
+  static removeAllChildElements(id) {
     const domElement = document.getElementById(id);
     while (domElement.firstElementChild) {
       domElement.removeChild(domElement.firstElementChild);

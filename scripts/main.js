@@ -1,8 +1,8 @@
 const eventAction = new EventAction();
 const menu = new Menu(); //chnage inline-menu display on inline-block
 const itemsPerPage = 10;
+const modalWindow = new ModalWindow(itemsPerPage);
 const pagination = new Pagination(postList, itemsPerPage, 4);
-const modalWindow = new ModalWindow(itemsPerPage, pagination);
 const event = "click";
 
 window.onload = () => {
@@ -25,4 +25,12 @@ window.onload = () => {
     event,
     target => modalWindow.handleModalWindow(target)
   );
+
+  /* eventAction.setDisplayOnElementEvent(
+    [
+      ...document.getElementsByClassName("post")
+    ],
+    event,
+    target => modalWindow.handleModalWindow(target)
+  ); */
 };

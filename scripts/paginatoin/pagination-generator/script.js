@@ -1,7 +1,5 @@
 class PaginationGenerator extends CustomDOMGenerator {
-  constuructor() {}
-
-  generatePosts(postList, currentPage) {
+  static generatePosts(postList, currentPage) {
     this.generateElements(
       postList.map((post, index) => ({
         name: "article",
@@ -20,7 +18,7 @@ class PaginationGenerator extends CustomDOMGenerator {
                   {
                     name: "img",
                     attributes: [
-                      { name: "class", value: "like-icon" },
+                      { name: "class", value: "like-icon post-like-click" },
                       { name: "src", value: "./icons/social/like/like.svg" },
                       { name: "alt", value: "like" }
                     ]
@@ -28,7 +26,9 @@ class PaginationGenerator extends CustomDOMGenerator {
                   {
                     name: "div",
                     isParent: true,
-                    attributes: [{ name: "class", value: "likes-number" }],
+                    attributes: [
+                      { name: "class", value: "likes-number post-like-click" }
+                    ],
                     childList: [{ text: post.like.counter, isParent: true }]
                   }
                 ]
@@ -92,7 +92,7 @@ class PaginationGenerator extends CustomDOMGenerator {
     );
   }
 
-  generatePaginationElements(numeration, currentPage) {
+  static generatePaginationElements(numeration, currentPage) {
     this.generateElements(
       [
         {

@@ -1,96 +1,99 @@
 class PaginationGenerator extends CustomDOMGenerator {
   static generatePosts(postList, currentPage) {
     this.generateElements(
-      postList.map((post, index) => ({
-        name: "article",
-        attributes: [
-          { name: "class", value: "post" },
-          { name: "id", value: `post-${(currentPage - 1) * 10 + index}` }
-        ],
-        style: `#post-${index} {
+      postList.map((post, index) => {
+        const postIndex = (currentPage - 1) * 10 + index;
+        return {
+          name: "article",
+          attributes: [
+            { name: "class", value: "post" },
+            { name: "id", value: `post-${postIndex}` }
+          ],
+          style: `#post-${postIndex} {
                   background-image: url("${post.image.url}");
                 }`,
-        childList: [
-          {
-            name: "div",
-            attributes: [{ name: "class", value: "like-wrapper" }],
-            childList: [
-              {
-                name: "div",
-                childList: [
-                  {
-                    name: "img",
-                    attributes: [
-                      { name: "class", value: "like-icon post-like-click" },
-                      { name: "src", value: "./icons/social/like/like.svg" },
-                      { name: "alt", value: "like" }
-                    ]
-                  },
-                  {
-                    name: "div",
-                    isParent: true,
-                    attributes: [
-                      { name: "class", value: "likes-number post-like-click" }
-                    ],
-                    childList: [{ text: post.like.counter, isParent: true }]
-                  }
-                ]
-              }
-            ]
-          },
-          {
-            name: "div",
-            attributes: [{ name: "class", value: "user-wrapper" }],
-            childList: [
-              {
-                name: "div",
-                attributes: [{ name: "class", value: "user" }],
-                childList: [
-                  {
-                    name: "div",
-                    attributes: [{ name: "class", value: "user-image" }],
-                    childList: [
-                      {
-                        name: "img",
-                        attributes: [
-                          { name: "src", value: post.user.image.src }
-                        ]
-                      }
-                    ]
-                  },
-                  {
-                    name: "div",
-                    attributes: [{ name: "class", value: "user-name" }],
-                    childList: [
-                      {
-                        text: `${post.user.name}${index}${currentPage}`,
-                        isParent: true
-                      }
-                    ]
-                  }
-                ]
-              },
-              {
-                name: "div",
-                attributes: [{ name: "class", value: "share" }],
-                childList: [
-                  {
-                    name: "img",
-                    attributes: [
-                      { name: "class", value: "share-icon" },
-                      {
-                        name: "src",
-                        value: "./icons/social/share/white-share.svg"
-                      },
-                      { name: "alt", value: "share" }
-                    ]
-                  }
-                ]
-              }
-            ]
-          }
-        ]
-      })),
+          childList: [
+            {
+              name: "div",
+              attributes: [{ name: "class", value: "like-wrapper" }],
+              childList: [
+                {
+                  name: "div",
+                  childList: [
+                    {
+                      name: "img",
+                      attributes: [
+                        { name: "class", value: "like-icon post-like-click" },
+                        { name: "src", value: "./icons/social/like/like.svg" },
+                        { name: "alt", value: "like" }
+                      ]
+                    },
+                    {
+                      name: "div",
+                      isParent: true,
+                      attributes: [
+                        { name: "class", value: "likes-number post-like-click" }
+                      ],
+                      childList: [{ text: post.like.counter, isParent: true }]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              name: "div",
+              attributes: [{ name: "class", value: "user-wrapper" }],
+              childList: [
+                {
+                  name: "div",
+                  attributes: [{ name: "class", value: "user" }],
+                  childList: [
+                    {
+                      name: "div",
+                      attributes: [{ name: "class", value: "user-image" }],
+                      childList: [
+                        {
+                          name: "img",
+                          attributes: [
+                            { name: "src", value: post.user.image.src }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      name: "div",
+                      attributes: [{ name: "class", value: "user-name" }],
+                      childList: [
+                        {
+                          text: `${post.user.name}${index}${currentPage}`,
+                          isParent: true
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  name: "div",
+                  attributes: [{ name: "class", value: "share" }],
+                  childList: [
+                    {
+                      name: "img",
+                      attributes: [
+                        { name: "class", value: "share-icon" },
+                        {
+                          name: "src",
+                          value: "./icons/social/share/white-share.svg"
+                        },
+                        { name: "alt", value: "share" }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        };
+      }),
       "posts-target-gen"
     );
   }

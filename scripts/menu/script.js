@@ -7,6 +7,7 @@ class Menu {
       parent: "parent",
       icon: {
         more: "more-icon",
+        burger: "burger-icon",
         arrow: "arrow-icon"
       },
       subMenu: "sub-menu-click"
@@ -22,7 +23,8 @@ class Menu {
       return target.firstElementChild;
     } else if (
       target.className.includes(this._menuElementClassName.icon.arrow) ||
-      target.className.includes(this._menuElementClassName.icon.more)
+      target.className.includes(this._menuElementClassName.icon.more) ||
+      target.className.includes(this._menuElementClassName.icon.burger)
     ) {
       return target;
     }
@@ -117,6 +119,9 @@ class Menu {
         this.hideMenuElement(subMenu);
       }
     } else {
+      if (this._prevTopMenu) {
+        Display.hide(this._prevTopMenu);
+      }
       if (this._history.length > 0) {
         this.hideAllSubMenus();
       }

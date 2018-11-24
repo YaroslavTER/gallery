@@ -53,7 +53,7 @@ class ModalWindow {
       postList
     );
     CustomDOMGenerator.removeAllChildElements("posts-target-gen");
-    PaginationGenerator.generatePosts(pagePostList, currentPage);
+    PaginationGenerator.generatePosts([].concat(pagePostList), currentPage);
   }
 
   getPost(post) {

@@ -1,7 +1,8 @@
-header#about-us > video {
+#video-target-gen > video {
   width: 100%;
   height: auto;
   margin-top: 40px;
+  margin-right: -100px;
 }
 
 article[class="about-us"] {

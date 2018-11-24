@@ -87,6 +87,7 @@ class Pagination {
   handleNumber(identifier) {
     const number = Number(identifier.split(":")[1]);
     this.goToPage(number);
+    return this._currentPage;
   }
 
   static getPostsForRender(currentPage, itemsPerPage, posts) {
@@ -181,14 +182,15 @@ class Pagination {
         this.hideModalWindow(modalWrapperClassName);
         break;
     }
+    return this._currentPage;
   }
 
   handlePagination(target) {
     const identifier = target.id.split("-")[1];
     if (identifier.includes(":")) {
-      this.handleNumber(identifier);
+      return this.handleNumber(identifier);
     } else {
-      this.handleArrows(identifier);
+      return this.handleArrows(identifier);
     }
   }
 }

@@ -16,7 +16,7 @@ let postList = [
     },
     like: {
       isPressed: false,
-      counter: 123
+      counter: 456
     },
     tagList: [
       { name: "mountains" },
@@ -42,7 +42,7 @@ let postList = [
     },
     like: {
       isPressed: false,
-      counter: 123
+      counter: 13
     },
     tagList: [
       { name: "mountains" },
@@ -89,7 +89,7 @@ let postList = [
     },
     like: {
       isPressed: false,
-      counter: 123
+      counter: 1756
     },
     tagList: [
       { name: "mountains" },
@@ -113,7 +113,7 @@ let postList = [
     },
     like: {
       isPressed: false,
-      counter: 123
+      counter: 1563
     },
     tagList: [
       { name: "mountains" },
@@ -365,6 +365,30 @@ let postList = [
   {
     image: { url: "./images/header/kaidi-guo.jpg" },
     id: "post-15",
+    user: {
+      name: "Till Lindemann",
+      image: {
+        src:
+          "https://shareville-media.s3.amazonaws.com/cache/41/2c/412cb688e429f372335f7527695b29b8.jpg" //css
+      }
+    },
+    share: {
+      link: "#"
+    },
+    like: {
+      isPressed: false,
+      counter: 123
+    },
+    tagList: [
+      { name: "mountains" },
+      { name: "nature" },
+      { name: "snow" },
+      { name: "sunset" }
+    ]
+  },
+  {
+    image: { url: "./images/header/kaidi-guo.jpg" },
+    id: "post-16",
     user: {
       name: "Till Lindemann",
       image: {

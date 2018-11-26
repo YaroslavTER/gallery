@@ -25,7 +25,8 @@ window.onload = () => {
     ],
     event,
     target => {
-      const selectedPage = pageSelector.handleSelectedPage(target);
+      pageSelector.handleSelectedPage(target);
+      breadcrumbs.handleBreadcrums(target);
     }
   );
 

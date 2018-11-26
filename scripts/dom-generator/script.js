@@ -43,9 +43,9 @@ class CustomDOMGenerator {
   }
 
   static generateElements(elementList, targetId) {
-    elementList.forEach(button => {
+    elementList.forEach(element => {
       CustomDOMGenerator.generateElement(
-        button,
+        element,
         document.getElementById(targetId)
       );
     });

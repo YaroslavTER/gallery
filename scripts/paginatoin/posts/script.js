@@ -1,7 +1,7 @@
 class Posts {
   constructor() {}
 }
-let postList = [
+let mainPostList = [
   {
     image: { url: "./images/header/alessandro-sacchi.jpg" },
     id: "post-0",

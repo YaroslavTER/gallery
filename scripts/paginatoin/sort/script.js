@@ -3,15 +3,20 @@ class Sort {
 
   sortPostList(postList, currentPage, action) {
     const sortedPosts = postList.sort(action);
+
     const postsPerPage = 10;
-    const chunkForSort = Pagination.getPostsForRender(
+    const chunkForRender = Pagination.getPostsForRender(
       currentPage,
       postsPerPage,
       sortedPosts
     );
     CustomDOMGenerator.removeAllChildElements("posts-target-gen");
-    PaginationGenerator.generatePosts(chunkForSort, currentPage);
+    PaginationGenerator.generatePosts(chunkForRender, currentPage);
     return sortedPosts;
+  }
+
+  getIdNumber(id) {
+    return Number(id.split("-").pop());
   }
 
   handleSort(currentPage, target) {
@@ -19,14 +24,14 @@ class Sort {
     switch (target.id) {
       case "new":
         changedPostList = this.sortPostList(
-          postList,
+          mainPostList,
           currentPage,
-          (a, b) => a.id > b.id
+          (a, b) => this.getIdNumber(a.id) > this.getIdNumber(b.id)
         );
         break;
       case "trending":
         changedPostList = this.sortPostList(
-          postList,
+          mainPostList,
           currentPage,
           (a, b) => a.like.counter < b.like.counter
         );

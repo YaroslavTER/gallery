@@ -2,14 +2,14 @@ class PaginationGenerator extends CustomDOMGenerator {
   static generatePosts(postList, currentPage) {
     this.generateElements(
       postList.map((post, index) => {
-        const postIndex = (currentPage - 1) * 10 + index;
         return {
           name: "article",
           attributes: [
             { name: "class", value: "post" },
-            { name: "id", value: `post-${postIndex}` }
+            { name: "id", value: post.id },
+            { name: "index", value: (currentPage - 1) * 10 + index }
           ],
-          style: `#post-${postIndex} {
+          style: `#${post.id} {
                   background-image: url("${post.image.url}");
                 }`,
           childList: [
@@ -62,13 +62,14 @@ class PaginationGenerator extends CustomDOMGenerator {
                     },
                     {
                       name: "div",
-                      attributes: [{ name: "class", value: "user-name" }],
-                      childList: [
+                      text: `${post.user.name}${currentPage}${index}`,
+                      attributes: [{ name: "class", value: "user-name" }]
+                      /* childList: [
                         {
-                          text: `${post.user.name}${index}${currentPage}`,
+                          ,
                           isParent: true
                         }
-                      ]
+                      ] */
                     }
                   ]
                 },

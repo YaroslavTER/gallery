@@ -1,7 +1,5 @@
-class BreadCrums {
+class Breadcrumbs {
   constructor() {}
 
-  handleBreadcrums(target) {
-    console.log(targte);
-  }
+  handleBreadcrums(target) {}
 }

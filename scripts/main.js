@@ -1,22 +1,32 @@
-const pageSelector = new PageSelector(document.getElementById("page.browse"));
 const eventAction = new EventAction();
 const menu = new Menu();
+const pageSelector = new PageSelector(document.getElementById("page_browse"));
+const breadcrumbs = new Breadcrumbs();
 const itemsPerPage = 10;
-const modalWindow = new ModalWindow(itemsPerPage);
-const pagination = new Pagination(postList, itemsPerPage, 4);
+const modalWindow = new ModalWindow(itemsPerPage, mainPostList);
+const pagination = new Pagination(mainPostList, itemsPerPage, 4);
+const radio = new Radio();
 const sort = new Sort();
 const event = "click";
 let currentPage = 1;
-let changedPostList = postList;
+let changedPostList = JSON.parse(JSON.stringify(mainPostList));
 
 window.onload = () => {
+  changedPostList = sort.handleSort(
+    currentPage,
+    radio.getCheckedRadioButton(),
+    changedPostList
+  );
+
   eventAction.setDisplayOnElementEvent(
     [
       ...document.getElementsByClassName("inline-menu"),
       document.getElementById("breadcrumbs")
     ],
     event,
-    target => pageSelector.handleSelectedPage(target)
+    target => {
+      const selectedPage = pageSelector.handleSelectedPage(target);
+    }
   );
 
   eventAction.setDisplayOnElementEvent(document, event, target =>
@@ -29,7 +39,6 @@ window.onload = () => {
     event,
     target => {
       pagination.postList = changedPostList;
-      console.log(pagination._postList);
       currentPage = pagination.handlePagination(target);
     }
   );
@@ -48,6 +57,9 @@ window.onload = () => {
       ...document.getElementsByClassName("modal-wrapper")
     ],
     event,
-    target => modalWindow.handleModalWindow(target)
+    target => {
+      modalWindow.postList = changedPostList;
+      modalWindow.handleModalWindow(target, currentPage, changedPostList);
+    }
   );
 };

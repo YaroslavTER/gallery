@@ -109,21 +109,23 @@ class Menu {
   }
 
   handleMenu(target) {
-    let menuElement = this.getMenuElement(target);
-    if (menuElement) {
-      let subMenu = this.getSubMenu(menuElement);
-      this.addToHistory(subMenu);
-      if (subMenu.style.display === "" || subMenu.style.display === "none") {
-        this.showMenuElement(subMenu);
-      } else if (subMenu.style.display === "grid") {
-        this.hideMenuElement(subMenu);
-      }
-    } else {
-      if (this._prevTopMenu) {
-        Display.hide(this._prevTopMenu);
-      }
-      if (this._history.length > 0) {
-        this.hideAllSubMenus();
+    if (target) {
+      let menuElement = this.getMenuElement(target);
+      if (menuElement) {
+        let subMenu = this.getSubMenu(menuElement);
+        this.addToHistory(subMenu);
+        if (subMenu.style.display === "" || subMenu.style.display === "none") {
+          this.showMenuElement(subMenu);
+        } else if (subMenu.style.display === "grid") {
+          this.hideMenuElement(subMenu);
+        }
+      } else {
+        if (this._prevTopMenu) {
+          Display.hide(this._prevTopMenu);
+        }
+        if (this._history.length > 0) {
+          this.hideAllSubMenus();
+        }
       }
     }
   }

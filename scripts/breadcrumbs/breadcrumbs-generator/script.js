@@ -33,15 +33,4 @@ class BreadcrumbsGenerator {
       targetGen
     );
   }
-  /* 
-  
-  <button class="empty-button"><h1>Browse</h1></button>
-  <img
-      class="right-arrow"
-      src="./icons/arrows/right-arrow.svg"
-      alt=""
-    />
-    <h1>Pictures</h1>
-
-  */
 }

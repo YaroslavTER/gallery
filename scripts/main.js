@@ -7,12 +7,13 @@ const pagination = new Pagination(postList, itemsPerPage, 4);
 const sort = new Sort();
 const event = "click";
 let currentPage = 1;
+let changedPostList = postList;
 
 window.onload = () => {
   eventAction.setDisplayOnElementEvent(
     [
       ...document.getElementsByClassName("inline-menu"),
-      document.getElementById("bredcrums")
+      document.getElementById("breadcrumbs")
     ],
     event,
     target => pageSelector.handleSelectedPage(target)
@@ -27,6 +28,8 @@ window.onload = () => {
     ...document.getElementsByClassName("pagination"),
     event,
     target => {
+      pagination.postList = changedPostList;
+      console.log(pagination._postList);
       currentPage = pagination.handlePagination(target);
     }
   );
@@ -35,7 +38,7 @@ window.onload = () => {
     ...document.getElementsByClassName("sort"),
     event,
     target => {
-      sort.handleSort(currentPage, target);
+      changedPostList = sort.handleSort(currentPage, target);
     }
   );
 
@@ -47,12 +50,4 @@ window.onload = () => {
     event,
     target => modalWindow.handleModalWindow(target)
   );
-
-  /* eventAction.setDisplayOnElementEvent(
-    [
-      ...document.getElementsByClassName("post")
-    ],
-    event,
-    target => modalWindow.handleModalWindow(target)
-  ); */
 };

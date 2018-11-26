@@ -65,7 +65,7 @@ let postList = [
     },
     like: {
       isPressed: false,
-      counter: 123
+      counter: 1
     },
     tagList: [
       { name: "mountains" },

@@ -1,13 +1,15 @@
 class Pagination {
-  constructor(posts, itemsPerPage, offset) {
-    this._posts = posts;
+  constructor(postList, itemsPerPage, offset) {
+    this._postList = postList;
     this._itemsPerPage = itemsPerPage;
     this._currentPage = null;
     this._offset = offset;
     this._buttonList = [];
-    this._length = Math.round(posts.length / this._itemsPerPage); //8;
-    //фіксована кількість елементів
-    //;
+    this._length = Math.round(postList.length / this._itemsPerPage);
+  }
+
+  set postList(postList) {
+    this._postList = postList;
   }
 
   changeOffsetIf(condition, action) {
@@ -29,14 +31,6 @@ class Pagination {
     });
   }
 
-  /*
-  << < 1* 2 3 4 5 6 7 > >>
-  << < 1 2* 3 4 5 6 7 > >>
-  << < 1 2 3* 4 5 6 7 > >>
-  << < 1 2 3 4* 5 6 7 > >>
-  << < 2 3 4 5* 6 7 8 > >>
-  << < 3 4 5 6 7 8  > >>
-  */
   getRightOffset(currentPage) {
     const isOffsetToBig = this._offset >= this._length;
     return this.changeOffsetIf(isOffsetToBig, () => {
@@ -106,7 +100,7 @@ class Pagination {
     const pagePostList = Pagination.getPostsForRender(
       currentPage,
       this._itemsPerPage,
-      this._posts
+      this._postList
     );
     CustomDOMGenerator.removeAllChildElements("posts-target-gen");
     PaginationGenerator.generatePosts(pagePostList, this._currentPage);

@@ -2,10 +2,12 @@ class EventAction {
   constructor() {}
 
   applyAction(element, elementEvent, wrapper) {
-    element.addEventListener(elementEvent, event => {
-      const target = event.target;
-      wrapper(target);
-    });
+    if (element) {
+      element.addEventListener(elementEvent, event => {
+        const target = event.target;
+        wrapper(target);
+      });
+    }
   }
 
   setDisplayOnElementEvent(DOMElement, elementEvent, wrapper) {

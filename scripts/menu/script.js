@@ -43,7 +43,7 @@ class Menu {
   }
 
   getSubMenuLevel(subMenu) {
-    if (subMenu.id) {
+    if (subMenu && subMenu.id) {
       return Number(
         subMenu.id.split(this.separator.dash)[1].split(this.separator.colon)[1]
       );
@@ -97,6 +97,10 @@ class Menu {
     Display.hide(subMenu);
     if (subMenu.className.includes(this._menuElementClassName.subMenu)) {
       this.hideAllSubMenus();
+      /* 
+        hide all elements which sub-menu level value 
+        is higher than value of current element 
+      */
       this.removeFromHistory(subMenu);
     }
     if (

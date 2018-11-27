@@ -103,10 +103,12 @@ nav ul {
   background-color: rgb(177, 177, 177);
 }
 
-.light > li:hover {
-  border-bottom: 1px solid rgb(34, 34, 34);
-  /* 
-  background-color: rgb(248, 248, 248); */
+.sub-menu.dark > li:hover {
+  color: rgb(145, 144, 144);
+}
+
+.sub-menu.light > li:hover {
+  color: rgb(107, 107, 107);
 }
 
 .sub-menu.light > li,
@@ -127,12 +129,6 @@ nav ul {
 .dark > li > label,
 .dark > li > label > div {
   color: white;
-}
-
-.dark > li:hover {
-  border-bottom: 1px solid rgb(177, 177, 177);
-  /* 
-  background-color: rgb(63, 63, 63); */
 }
 
 /* !dark */

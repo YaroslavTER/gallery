@@ -8,7 +8,7 @@
 }
 
 .post .like-wrapper {
-  background-image: linear-gradient(to bottom, black, transparent);
+  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.5), transparent);
   height: 40px;
 }
 
@@ -56,7 +56,7 @@
   width: 100%;
   -ms-grid-columns: 150px 150px;
   grid-template-columns: 150px 150px;
-  background-image: linear-gradient(to bottom, transparent, black);
+  background-image: linear-gradient(to bottom, transparent, rgba(0, 0, 0, 0.5));
   align-items: center;
   align-self: end;
 }

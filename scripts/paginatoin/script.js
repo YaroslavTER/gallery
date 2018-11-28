@@ -106,54 +106,6 @@ class Pagination {
     PaginationGenerator.generatePosts(pagePostList, this._currentPage);
   }
 
-  /* class="share-icon"
-          src="./icons/social/share/white-share.svg"
-          alt="share" */
-
-  /* 
-  
-  <article class="post" id="post-1">
-    <div class="like-wrapper">
-
-      <div>
-        <img
-          class="like-icon"
-          src="./icons/social/like/like.svg"
-          alt="like"
-        />
-        <div class="likes-number">4523</div>
-      </div>
-
-    </div>
-
-    <div class="user-wrapper">
-      <div class="user">
-
-        <div class="user-image">
-          <img
-            src="https://shareville-media.s3.amazonaws.com/cache/41/2c/412cb688e429f372335f7527695b29b8.jpg"
-            alt=""
-          />
-        </div>
-
-        <div class="user-name">Twitch Kappa</div>
-        
-      </div>
-
-      <div class="share">
-        <img
-          class="share-icon"
-          src="./icons/social/share/white-share.svg"
-          alt="share"
-        />
-      </div>
-
-    </div>
-
-  </article>
-  
-  */
-
   handleArrows(identifier) {
     switch (identifier) {
       case "next":

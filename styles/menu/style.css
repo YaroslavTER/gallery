@@ -1,3 +1,7 @@
+.header-wrapper {
+  z-index: 1;
+}
+
 nav ul {
   position: relative;
 }
@@ -12,7 +16,7 @@ nav ul {
 
 .inline-menu {
   top: 0;
-  margin-top: 25px;
+  margin-top: 24px;
 }
 
 #main-menu {
@@ -21,17 +25,11 @@ nav ul {
   font-size: 15px;
 }
 
-.vertical-line {
-  border-right: 1px solid rgb(185, 185, 185);
-  padding-right: 10px;
+.vertical-line:not(:last-child)::after {
+  content: "|";
+  color: rgb(185, 185, 185);
+  padding-left: 10px;
 }
-
-/* #main-menu > ul {
-  display: -ms-grid;
-  display: grid;
-  -ms-grid-columns: 1fr 1fr 1fr 1fr;
-  grid-template-columns: 75px 75px 75px 30px;
-} */
 
 .burger li {
   display: none;
@@ -103,14 +101,6 @@ nav ul {
   background-color: rgb(177, 177, 177);
 }
 
-.sub-menu.dark > li:hover {
-  color: rgb(145, 144, 144);
-}
-
-.sub-menu.light > li:hover {
-  color: rgb(107, 107, 107);
-}
-
 .sub-menu.light > li,
 .light li > label,
 .light li > label > div {
@@ -139,13 +129,17 @@ nav ul {
   height: 10px;
 }
 
-.sub-menu-wrapper label {
-  /* width: 100%; */
+.cover-all-height {
+  height: 100vh;
 }
 
 .more-icon,
 .login-icon {
   height: 17px;
+}
+
+.more-icon {
+  margin-bottom: -3px;
 }
 
 .login-icon {

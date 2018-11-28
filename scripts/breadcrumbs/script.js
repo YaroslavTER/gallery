@@ -17,6 +17,7 @@ class Breadcrumbs extends BreadcrumbsGenerator {
       this._path = null;
       this._path = [];
       while (!currentElement.className.includes("top-level-menu")) {
+        //classList
         if (currentElement.tagName.toLowerCase() === "li") {
           this.addMenuItem(currentElement.firstChild.textContent);
         }

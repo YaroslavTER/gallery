@@ -13,7 +13,7 @@ class ModalWindow {
   applyAction(className, action) {
     const elements = document.getElementsByClassName(className);
     [...elements].forEach(element => {
-      action(element);
+      action(element, "block");
     });
   }
 

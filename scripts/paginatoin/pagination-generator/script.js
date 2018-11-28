@@ -1,6 +1,6 @@
-class PaginationGenerator extends CustomDOMGenerator {
+class PaginationGenerator {
   static generatePosts(postList, currentPage) {
-    this.generateElements(
+    CustomDOMGenerator.generateElements(
       postList.map((post, index) => {
         return {
           name: "article",
@@ -100,7 +100,7 @@ class PaginationGenerator extends CustomDOMGenerator {
   }
 
   static generatePaginationElements(numeration, currentPage) {
-    this.generateElements(
+    CustomDOMGenerator.generateElements(
       [
         {
           name: "button",

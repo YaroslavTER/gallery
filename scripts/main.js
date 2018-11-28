@@ -21,6 +21,7 @@ window.onload = () => {
   eventAction.setDisplayOnElementEvent(
     [
       ...document.getElementsByClassName("inline-menu"),
+      ...document.getElementsByClassName("burger"),
       document.getElementById("breadcrumbs")
     ],
     event,

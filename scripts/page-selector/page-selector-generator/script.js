@@ -5,6 +5,11 @@ class PageSelectorGenerator {
     CustomDOMGenerator.generateElement(
       {
         name: "video",
+        style: `body > header { 
+                  max-height: 350px;
+                  height: 100%;
+                  background-image: none;
+                }`,
         attributes: [
           { name: "autoplay" },
           { name: "controls" },

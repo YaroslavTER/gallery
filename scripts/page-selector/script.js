@@ -25,7 +25,7 @@ class PageSelector extends PageSelectorGenerator {
       if (this._previousPage) {
         Display.hide(this._previousPage);
       }
-      Display.show(page);
+      Display.show(page, "grid");
       this._previousPage = page;
     }
   }

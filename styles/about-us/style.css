@@ -7,29 +7,38 @@
 
 article[class="about-us"] {
   margin-bottom: 50px;
+  display: grid;
 }
 
 .block-wrapper {
   display: -ms-grid;
   display: grid;
-  grid-template-columns: repeat(auto-fill, 500px);
-  grid-gap: 20px;
-  -webkit-box-pack: center;
-  -ms-flex-pack: center;
+  max-width: 1080px;
+  width: 100%;
+  grid-template-columns: 500px 1fr;
+  grid-auto-flow: dense;
   justify-content: center;
+  justify-self: center;
+  margin-bottom: 40px;
 }
 
-.block {
-  max-width: 500px;
-  width: 100%;
-  margin-bottom: 10px;
+.block.photo {
+  margin-right: 5px;
+  margin-left: 5px;
+}
+
+@media screen and (max-width: 900px) {
+  .block-wrapper {
+    grid-template-columns: minmax(200px, 500px);
+    justify-items: center;
+  }
 }
 
 .block.photo {
   border: 1px solid black;
 }
 
-.block.photo img {
+.block.photo .slide {
   height: 100%;
   width: 100%;
 }

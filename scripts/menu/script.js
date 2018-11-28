@@ -2,6 +2,7 @@ class Menu {
   constructor() {
     this._history = [];
     this._prevTopMenu = null;
+    this._displayValue = "block";
     this._menuElementClassName = {
       topMenu: "top-level-menu",
       parent: "parent",
@@ -79,17 +80,17 @@ class Menu {
     const subMenuLevel = this.getSubMenuLevel(subMenu);
     if (subMenuLevel === 0) {
       if (this._prevTopMenu === null) {
-        Display.show(subMenu);
+        Display.show(subMenu, this._displayValue);
         this._prevTopMenu = subMenu;
       } else if (this._prevTopMenu !== null) {
         Display.hide(this._prevTopMenu);
         this.hideAllSubMenus();
         this._prevTopMenu = null;
-        Display.show(subMenu);
+        Display.show(subMenu, this._displayValue);
         this._prevTopMenu = subMenu;
       }
     } else if (subMenuLevel > 0) {
-      Display.show(subMenu);
+      Display.show(subMenu, this._displayValue);
     }
   }
 
@@ -120,12 +121,12 @@ class Menu {
         this.addToHistory(subMenu);
         if (subMenu.style.display === "" || subMenu.style.display === "none") {
           this.showMenuElement(subMenu);
-        } else if (subMenu.style.display === "grid") {
+        } else if (subMenu.style.display === "block") {
           this.hideMenuElement(subMenu);
         }
       } else {
         if (this._prevTopMenu) {
-          Display.hide(this._prevTopMenu);
+          Display.hide(this._prevTopMenu, "block");
         }
         if (this._history.length > 0) {
           this.hideAllSubMenus();

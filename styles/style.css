@@ -6,6 +6,7 @@
 @import url("./pagination/style.css");
 @import url("./posts/modal-window/style.css");
 @import url("./about-us/style.css");
+@import url("./about-us/slider/style.css");
 @import url("./links/style.css");
 
 /* fonts */
@@ -46,7 +47,8 @@ body > header h2 {
 /* !fonts */
 
 body > header {
-  height: 370px;
+  height: 350px;
+  background-image: url("../images/header/alessandro-sacchi.jpg");
   overflow: hidden;
   position: relative;
   background-size: cover;
@@ -55,10 +57,6 @@ body > header {
   margin-top: -8px;
   margin-left: -8px;
   margin-right: -8px;
-}
-
-body > header {
-  background-image: url("../images/header/alessandro-sacchi.jpg");
 }
 
 h1 {

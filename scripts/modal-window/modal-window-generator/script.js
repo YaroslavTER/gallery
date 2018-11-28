@@ -1,8 +1,11 @@
-class ModalWindowGenerator extends CustomDOMGenerator {
+class ModalWindowGenerator {
   static generateModalWindow(post, targetGen) {
-    this.generateElement(
+    CustomDOMGenerator.generateElement(
       {
         name: "div",
+        style: `body { 
+                  overflow: hidden
+                }`,
         attributes: [{ name: "class", value: "modal-window" }],
         childList: [
           {

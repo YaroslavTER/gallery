@@ -38,6 +38,7 @@ class CustomDOMGenerator {
       if (element.style) {
         CustomDOMGenerator.appendChildStyle(createdElement, element);
       }
+      //console.log(element, parent);
       parent.appendChild(createdElement);
     }
   }

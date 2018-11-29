@@ -2,16 +2,23 @@ class PageSelector extends PageSelectorGenerator {
   constructor(defaultPage) {
     super();
     this._previousPage = defaultPage;
+    this._interval = null;
   }
 
   changeHeader(pageName) {
     const videoTargetGen = "video-target-gen";
+    const slider = new Slider();
     switch (pageName) {
       case "about-us":
+        this._interval = slider.autoSwitching(mainSlides);
         CustomDOMGenerator.removeAllChildElements(videoTargetGen);
         this.appedVideoInHeader(videoTargetGen);
         break;
       case "browse":
+        if (this._interval) {
+          slider.stopInterval(this._interval);
+          this._interval = null;
+        }
         CustomDOMGenerator.removeAllChildElements(videoTargetGen);
         break;
     }

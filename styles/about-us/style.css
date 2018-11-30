@@ -15,7 +15,7 @@ article[class="about-us"] {
   display: grid;
   max-width: 1080px;
   width: 100%;
-  grid-template-columns: 500px 1fr;
+  grid-template-columns: 480px 1fr;
   grid-auto-flow: dense;
   justify-content: center;
   justify-self: center;
@@ -25,20 +25,12 @@ article[class="about-us"] {
 .block.photo {
   margin-right: 5px;
   margin-left: 5px;
+  align-self: center;
 }
 
 @media screen and (max-width: 900px) {
   .block-wrapper {
-    grid-template-columns: minmax(200px, 500px);
+    grid-template-columns: minmax(200px, 480px);
     justify-items: center;
   }
-}
-
-.block.photo {
-  border: 1px solid black;
-}
-
-.block.photo .slide {
-  height: 100%;
-  width: 100%;
 }

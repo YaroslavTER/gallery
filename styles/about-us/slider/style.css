@@ -1,4 +1,16 @@
-.slider .arrow {
-  height: 20px;
-  position: absolute;
+.block.photo {
+  border: 1px solid black;
+  height: 300px;
+  overflow: hidden;
+}
+
+.block.photo .slide {
+  width: 100%;
+  height: auto;
+}
+
+@media screen and (max-width: 900px) {
+  .block.photo {
+    height: 190px;
+  }
 }

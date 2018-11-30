@@ -7,10 +7,11 @@ class PageSelector extends PageSelectorGenerator {
 
   changeHeader(pageName) {
     const videoTargetGen = "video-target-gen";
-    const slider = new Slider();
+    const slider = new Slider(mainSlides);
     switch (pageName) {
       case "about-us":
-        this._interval = slider.autoSwitching(mainSlides);
+        slider.stopInterval(this._interval);
+        this._interval = slider.autoSwitching();
         CustomDOMGenerator.removeAllChildElements(videoTargetGen);
         this.appedVideoInHeader(videoTargetGen);
         break;

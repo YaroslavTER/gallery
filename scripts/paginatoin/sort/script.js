@@ -19,24 +19,22 @@ class Sort {
     return Number(id.split("-").pop());
   }
 
+  sortBy(currentPage, compare) {
+    return this.sortPostList(mainPostList, currentPage, compare);
+  }
+
   handleSort(currentPage, target) {
-    let changedPostList = null;
     switch (target.id) {
       case "new":
-        changedPostList = this.sortPostList(
-          mainPostList,
+        return this.sortBy(
           currentPage,
           (a, b) => this.getIdNumber(a.id) > this.getIdNumber(b.id)
         );
-        break;
       case "trending":
-        changedPostList = this.sortPostList(
-          mainPostList,
+        return this.sortBy(
           currentPage,
           (a, b) => a.like.counter < b.like.counter
         );
-        break;
     }
-    return changedPostList;
   }
 }

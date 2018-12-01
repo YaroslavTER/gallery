@@ -3,19 +3,36 @@ const menu = new Menu();
 const pageSelector = new PageSelector(document.getElementById("page_browse"));
 const breadcrumbs = new Breadcrumbs();
 const itemsPerPage = 10;
+const filter = new Filter(JSON.parse(JSON.stringify(mainPostList)));
 const modalWindow = new ModalWindow(itemsPerPage, mainPostList);
 const pagination = new Pagination(mainPostList, itemsPerPage, 4);
 const radio = new Radio();
 const sort = new Sort();
 const event = "click";
 let currentPage = 1;
-let changedPostList = JSON.parse(JSON.stringify(mainPostList));
+let changedPostList = [];
 
 window.onload = () => {
-  changedPostList = sort.handleSort(
-    currentPage,
-    radio.getCheckedRadioButton(),
-    changedPostList
+  const sortByCheckedButton = () => {
+    changedPostList = sort.handleSort(
+      currentPage,
+      radio.getCheckedRadioButton(),
+      changedPostList
+    );
+  };
+  sortByCheckedButton();
+
+  eventAction.setDisplayOnElementEvent(
+    ...document.getElementsByClassName("filter"),
+    event,
+    target => {
+      if (target.tagName.toLowerCase() === "option") {
+        changedPostList = filter.handleFilter(target);
+        pagination.postList = changedPostList;
+        pagination.goToPage(1);
+        sortByCheckedButton();
+      }
+    }
   );
 
   eventAction.setDisplayOnElementEvent(

@@ -12,8 +12,8 @@
     <header>
       <div class="header-wrapper">
         <h2>Gallery</h2>
-        <form action="">
-          <input type="text" name="text" placeholder="Search" id="search" />
+        <form action="#">
+          <input type="search" name="text" placeholder="Search" id="search" />
           <label for="search"
             ><button>
               <img
@@ -23,7 +23,6 @@
               /></button
           ></label>
         </form>
-
         <nav id="main-menu">
           <ul class="inline-menu dark">
             <li id="tm:0" class="vertical-line">Home</li>
@@ -60,7 +59,6 @@
                         src="./icons/arrows/sub-menu/black-down-arrow.svg"
                         alt="Show sub menu"
                       />
-
                       <ul id="tm:3-sub:2" class="sub-menu dark sub-menu-click">
                         <li>Popular</li>
                         <li>New</li>
@@ -90,7 +88,6 @@
                     src="./icons/arrows/sub-menu/white-down-arrow.svg"
                     alt="Show sub menu"
                   />
-
                   <ul id="tmb:1-sub:1" class="sub-menu light sub-menu-click">
                     <li class="sub-menu-wrapper parent">
                       Popular
@@ -99,7 +96,6 @@
                         src="./icons/arrows/sub-menu/black-down-arrow.svg"
                         alt="Show sub menu"
                       />
-
                       <ul id="tmb:1-sub:2" class="sub-menu dark sub-menu-click">
                         <li>Popular</li>
                         <li>New</li>
@@ -115,7 +111,6 @@
                               src="./icons/arrows/sub-menu/black-down-arrow.svg"
                               alt="Show sub menu"
                             />
-
                             <ul
                               id="tmb:1-sub:2"
                               class="sub-menu dark sub-menu-click"
@@ -157,11 +152,20 @@
             />
             <h1>Pictures</h1>
           </nav>
-          <div class="sort">
-            <input type="radio" checked name="posts-sort" id="trending" />
-            <label for="trending">Trending</label> /
-            <input type="radio" name="posts-sort" id="new" />
-            <label for="new">New</label>
+          <div class="sort-filter-wrapper">
+            <div class="sort">
+              <input type="radio" checked name="posts-sort" id="trending" />
+              <label for="trending">Trending</label> /
+              <input type="radio" name="posts-sort" id="new" />
+              <label for="new">New</label>
+            </div>
+            <div class="filter">
+              <select>
+                <option value="0">all</option>
+                <option value="1">mountains</option>
+                <option value="2">sunset</option>
+              </select>
+            </div>
           </div>
         </header>
 
@@ -270,7 +274,10 @@
 
   <script src="./scripts/paginatoin/posts/script.js"></script>
   <script src="./scripts/paginatoin/pagination-generator/script.js"></script>
+
+  <script src="./scripts/paginatoin/filter/script.js"></script>
   <script src="./scripts/paginatoin/sort/radio/script.js"></script>
+  
   <script src="./scripts/paginatoin/sort/script.js"></script>
   <script src="./scripts/paginatoin/script.js"></script>
 

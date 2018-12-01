@@ -1,0 +1,5 @@
+class FilterGeneration {
+  constructor() {}
+
+  generateSelector() {}
+}

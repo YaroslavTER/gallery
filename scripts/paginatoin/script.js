@@ -5,11 +5,19 @@ class Pagination {
     this._currentPage = null;
     this._offset = offset;
     this._buttonList = [];
-    this._length = Math.round(postList.length / this._itemsPerPage);
+    this._length = this.refreshLength(postList, itemsPerPage);
   }
 
   set postList(postList) {
     this._postList = postList;
+  }
+
+  set length(length) {
+    this._length = length;
+  }
+
+  refreshLength(postList, itemsPerPage) {
+    this.length = Math.ceil(postList.length / itemsPerPage);
   }
 
   changeOffsetIf(condition, action) {
@@ -51,6 +59,7 @@ class Pagination {
     const rightOffset = this.getRightOffset(currentPage);
     let auxLeftOffset = 0;
     let auxRightOffset = 0;
+    this.refreshLength(this._postList, this._itemsPerPage);
     if (
       leftOffset +
         this._offset -
@@ -74,7 +83,6 @@ class Pagination {
           element => currentPage + element
         )
       );
-
     return numeration;
   }
 
@@ -93,6 +101,7 @@ class Pagination {
 
   goToPage(currentPage) {
     CustomDOMGenerator.removeAllChildElements("pg-target-gen");
+    this.refreshLength(this._postList, this._itemsPerPage);
     PaginationGenerator.generatePaginationElements(
       this.calculate(currentPage),
       currentPage
@@ -107,6 +116,7 @@ class Pagination {
   }
 
   handleArrows(identifier) {
+    this.refreshLength(this._postList, this._itemsPerPage);
     switch (identifier) {
       case "next":
         if (this._currentPage < this._length) {

@@ -23,6 +23,7 @@ class PageSelector extends PageSelectorGenerator {
         CustomDOMGenerator.removeAllChildElements(videoTargetGen);
         break;
       case "upload":
+        this.removeBackgroundImage();
         break;
     }
   }
@@ -36,7 +37,12 @@ class PageSelector extends PageSelectorGenerator {
       if (this._previousPage) {
         Display.hide(this._previousPage);
       }
-      Display.show(page, "grid");
+      if (pageName === "upload") {
+        Display.show(page, "block");
+      } else {
+        Display.show(page, "grid");
+      }
+
       this._previousPage = page;
     }
   }

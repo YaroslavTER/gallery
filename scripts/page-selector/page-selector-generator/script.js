@@ -50,4 +50,16 @@ class PageSelectorGenerator {
       videoTargetGen //document.getElementById(videoTargetGen)
     );
   }
+
+  removeBackgroundImage() {
+    CustomDOMGenerator.generateElement(
+      {
+        name: "div",
+        style: `body > header {
+                  background-image: url("../images/header/pexels-photo-268862.jpeg");
+                }`
+      },
+      document.getElementById("video-target-gen")
+    );
+  }
 }

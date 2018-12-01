@@ -24,7 +24,7 @@ class Breadcrumbs extends BreadcrumbsGenerator {
         currentElement = currentElement.parentElement;
       }
       this.addMenuItem(currentElement.firstChild.textContent);
-      this._path = this._path.reverse();
+      this._path = ["Home"].concat(this._path.reverse());
       const targetGen = "path-target-gen";
       CustomDOMGenerator.removeAllChildElements(targetGen);
       this.generateBreadcrumbs(targetGen, this._path);

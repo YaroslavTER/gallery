@@ -42,7 +42,9 @@
                 <li class="select:browse">Pictures</li>
               </ul>
             </li>
-            <li id="tm:2" class="vertical-line top-level-menu select:upload">Upload</li>
+            <li id="tm:2" class="vertical-line top-level-menu select:upload">
+              Upload
+            </li>
             <li id="tm:3" class="dropdown parent top-level-menu">
               <img class="more-icon" src="./icons/menu/more.svg" alt="more" />
               <ul id="tm:3-sub:0" class="dark main-menu-list sub-menu-click">
@@ -134,7 +136,7 @@
                     <li>Most shared</li>
                   </ul>
                 </li>
-                <li>Upload</li>
+                <li class="select:upload">Upload</li>
                 <li class="select:about-us">About Us</li>
                 <li class="cover-all-height"></li>
               </ul>
@@ -146,17 +148,9 @@
     </header>
 
     <article role="main">
+      <header><nav class="breadcrumbs" id="path-target-gen"><h1>Home</h1></nav></header>
       <article id="page_browse">
         <header>
-          <nav class="breadcrumbs" id="path-target-gen">
-            <button class="empty-button"><h1>Browse</h1></button
-            ><img
-              class="right-arrow"
-              src="./icons/arrows/right-arrow.svg"
-              alt=""
-            />
-            <h1>Pictures</h1>
-          </nav>
           <div class="sort-filter-wrapper">
             <div class="sort">
               <input type="radio" checked name="posts-sort" id="trending" />
@@ -183,17 +177,6 @@
         </div>
       </article>
       <article id="page_about-us">
-        <header>
-          <nav class="breadcrumbs">
-            <button class="empty-button"><h1>Home</h1></button
-            ><img
-              class="right-arrow"
-              src="./icons/arrows/right-arrow.svg"
-              alt=""
-            />
-            <h1>About Us</h1>
-          </nav>
-        </header>
         <article class="block-wrapper slider">
           <article id="slide-target-gen" class="block photo">
             <img
@@ -220,7 +203,27 @@
         </article>
       </article>
       <article id="page_upload">
-        upload
+        <form action="" onsubmit="return false">
+          <div>
+            <label for="img-url" name="img-url-label">Url</label>
+            <input
+              type="text"
+              placeholder="link"
+              name="img-url-input"
+              id="img-url"
+            />
+          </div>
+          <div>
+            <label for="img-url" name="tags-label">Tags</label>
+            <input
+              type="text"
+              placeholder="mountains, clear sky, sunset"
+              name="tags-input"
+              id="img-url"
+            />
+          </div>
+          <input type="button" value="Submit post" />
+        </form>
       </article>
     </article>
 

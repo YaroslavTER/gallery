@@ -12,10 +12,15 @@
     <header>
       <div class="header-wrapper">
         <h2>Gallery</h2>
-        <form action="#">
-          <input type="search" name="text" placeholder="Search" id="search" />
+        <form action="" onsubmit="return false">
+          <input
+            type="search"
+            name="text"
+            placeholder="Search"
+            id="search-input"
+          />
           <label for="search"
-            ><button>
+            ><button id="search-button">
               <img
                 class="search-icon"
                 src="./icons/search/search.svg"
@@ -37,7 +42,7 @@
                 <li class="select:browse">Pictures</li>
               </ul>
             </li>
-            <li id="tm:2" class="vertical-line">Upload</li>
+            <li id="tm:2" class="vertical-line top-level-menu select:upload">Upload</li>
             <li id="tm:3" class="dropdown parent top-level-menu">
               <img class="more-icon" src="./icons/menu/more.svg" alt="more" />
               <ul id="tm:3-sub:0" class="dark main-menu-list sub-menu-click">
@@ -214,6 +219,9 @@
           </article>
         </article>
       </article>
+      <article id="page_upload">
+        upload
+      </article>
     </article>
 
     <footer>
@@ -277,7 +285,7 @@
 
   <script src="./scripts/paginatoin/filter/script.js"></script>
   <script src="./scripts/paginatoin/sort/radio/script.js"></script>
-  
+
   <script src="./scripts/paginatoin/sort/script.js"></script>
   <script src="./scripts/paginatoin/script.js"></script>
 

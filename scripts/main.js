@@ -10,27 +10,46 @@ const radio = new Radio();
 const sort = new Sort();
 const event = "click";
 let currentPage = 1;
-let changedPostList = [];
+let changedPostList = JSON.parse(JSON.stringify(mainPostList));
 
 window.onload = () => {
-  const sortByCheckedButton = () => {
+  /* const sortByCheckedButton = () => {
     changedPostList = sort.handleSort(
       currentPage,
       radio.getCheckedRadioButton(),
       changedPostList
     );
   };
-  sortByCheckedButton();
+  sortByCheckedButton(); */
+  //changedPostList = pagination.goToPage(currentPage);
+  changedPostList = filter.handleFilter("all");
+  pagination.postList = changedPostList;
+  pagination.goToPage(1);
+
+  eventAction.setDisplayOnElementEvent(
+    document.getElementById("search-button"),
+    event,
+    () => {
+      const inputText = document.getElementById("search-input").value;
+      if (inputText === "") {
+        inputText = all;
+      }
+      changedPostList = filter.handleFilter(inputText);
+      pagination.postList = changedPostList;
+      pagination.goToPage(1);
+      //sortByCheckedButton();
+    }
+  );
 
   eventAction.setDisplayOnElementEvent(
     ...document.getElementsByClassName("filter"),
     event,
     target => {
       if (target.tagName.toLowerCase() === "option") {
-        changedPostList = filter.handleFilter(target);
+        changedPostList = filter.handleFilter(target.text);
         pagination.postList = changedPostList;
         pagination.goToPage(1);
-        sortByCheckedButton();
+        //sortByCheckedButton();
       }
     }
   );
@@ -52,7 +71,6 @@ window.onload = () => {
     menu.handleMenu(target)
   );
 
-  pagination.goToPage(currentPage);
   eventAction.setDisplayOnElementEvent(
     ...document.getElementsByClassName("pagination"),
     event,

@@ -1,5 +1,6 @@
 class PaginationGenerator {
   static generatePosts(postList, currentPage) {
+    console.log("generation", postList, currentPage);
     CustomDOMGenerator.generateElements(
       postList.map((post, index) => {
         return {

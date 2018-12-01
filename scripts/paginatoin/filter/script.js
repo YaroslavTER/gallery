@@ -12,7 +12,7 @@ class Filter {
     );
   }
 
-  handleFilter(target) {
-    return this.filterPosts(target.text);
+  handleFilter(text) {
+    return this.filterPosts(text);
   }
 }

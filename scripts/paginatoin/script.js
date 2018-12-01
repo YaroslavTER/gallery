@@ -113,6 +113,7 @@ class Pagination {
     );
     CustomDOMGenerator.removeAllChildElements("posts-target-gen");
     PaginationGenerator.generatePosts(pagePostList, this._currentPage);
+    return this._postList;
   }
 
   handleArrows(identifier) {

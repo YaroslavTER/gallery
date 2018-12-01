@@ -15,7 +15,12 @@ let mainPostList = [
       isPressed: false,
       counter: 456
     },
-    tagList: [{ name: "nature" }, { name: "snow" }, { name: "sunset" }]
+    tagList: [
+      { name: "nature" },
+      { name: "snow" },
+      { name: "sunset" },
+      { name: "clear sky" }
+    ]
   },
   {
     image: {

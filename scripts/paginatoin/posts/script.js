@@ -1,7 +1,7 @@
 let mainPostList = [
   {
     image: { url: "./images/posts/kaidi-guo.jpg" },
-    id: "post-1",
+    id: "post-0",
     user: {
       name: "Till Lindemann",
       image: {
@@ -24,7 +24,7 @@ let mainPostList = [
   },
   {
     image: { url: "./images/posts/pexels-photo-1639418.jpeg" },
-    id: "post-2",
+    id: "post-1",
     user: {
       name: "Till Lindemann",
       image: {
@@ -42,7 +42,7 @@ let mainPostList = [
   },
   {
     image: { url: "./images/posts/pexels-photo-1638502.jpeg" },
-    id: "post-3",
+    id: "post-2",
     user: {
       name: "Till Lindemann",
       image: {
@@ -60,7 +60,7 @@ let mainPostList = [
   },
   {
     image: { url: "./images/posts/pexels-photo-1120566.jpeg" },
-    id: "post-4",
+    id: "post-3",
     user: {
       name: "Irina Kostenich",
       image: {
@@ -78,7 +78,7 @@ let mainPostList = [
   },
   {
     image: { url: "./images/posts/pexels-photo-115001.jpeg" },
-    id: "post-5",
+    id: "post-4",
     user: {
       name: "Bruce Mars",
       image: {
@@ -90,13 +90,13 @@ let mainPostList = [
     },
     like: {
       isPressed: false,
-      counter: 352
+      counter: 654
     },
     tagList: [{ name: "book" }, { name: "reading" }]
   },
   {
     image: { url: "./images/posts/pexels-photo-991012.jpeg" },
-    id: "post-6",
+    id: "post-5",
     user: {
       name: "Irina Kostenich",
       image: {
@@ -114,7 +114,7 @@ let mainPostList = [
   },
   {
     image: { url: "./images/posts/pexels-photo-1638061.jpeg" },
-    id: "post-7",
+    id: "post-6",
     user: {
       name: "Jimmy Jimmy",
       image: {
@@ -139,7 +139,7 @@ let mainPostList = [
   },
   {
     image: { url: "./images/posts/pexels-photo-1638073.jpeg" },
-    id: "post-8",
+    id: "post-7",
     user: {
       name: "Lisa Fotios",
       image: {
@@ -157,7 +157,7 @@ let mainPostList = [
   },
   {
     image: { url: "./images/posts/pexels-photo-1005476.jpeg" },
-    id: "post-9",
+    id: "post-8",
     user: {
       name: "Tim Gouw",
       image: {
@@ -175,7 +175,7 @@ let mainPostList = [
   },
   {
     image: { url: "./images/posts/pexels-photo.jpg" },
-    id: "post-10",
+    id: "post-9",
     user: {
       name: "Min An",
       image: {
@@ -193,7 +193,7 @@ let mainPostList = [
   },
   {
     image: { url: "./images/posts/pexels-photo-1549196.jpeg" },
-    id: "post-11",
+    id: "post-10",
     user: {
       name: "Till Lindemann",
       image: {
@@ -211,7 +211,7 @@ let mainPostList = [
   },
   {
     image: { url: "./images/posts/pexels-photo-1394841.jpeg" },
-    id: "post-12",
+    id: "post-11",
     user: {
       name: "Dids",
       image: {
@@ -234,7 +234,7 @@ let mainPostList = [
   },
   {
     image: { url: "./images/posts/pexels-photo-136419.jpeg" },
-    id: "post-13",
+    id: "post-12",
     user: {
       name: "Johannes Rapprich",
       image: {
@@ -252,7 +252,7 @@ let mainPostList = [
   },
   {
     image: { url: "./images/posts/pexels-photo-640947.jpeg" },
-    id: "post-14",
+    id: "post-13",
     user: {
       name: "Lisa Fotios",
       image: {
@@ -270,7 +270,7 @@ let mainPostList = [
   },
   {
     image: { url: "./images/posts/pexels-photo-203088.jpeg" },
-    id: "post-15",
+    id: "post-14",
     user: {
       name: "Tnarg",
       image: {
@@ -288,7 +288,7 @@ let mainPostList = [
   },
   {
     image: { url: "./images/posts/pexels-photo-904616.jpeg" },
-    id: "post-16",
+    id: "post-15",
     user: {
       name: "Jacub Gomez",
       image: {
@@ -312,7 +312,7 @@ let mainPostList = [
   },
   {
     image: { url: "./images/posts/pexels-photo-1616436.jpeg" },
-    id: "post-17",
+    id: "post-16",
     user: {
       name: "Matheus Ferrerira",
       image: {
@@ -330,7 +330,7 @@ let mainPostList = [
   },
   {
     image: { url: "./images/posts/pexels-photo-1330806.jpeg" },
-    id: "post-18",
+    id: "post-17",
     user: {
       name: "Irina Kostenich",
       image: {
@@ -353,7 +353,7 @@ let mainPostList = [
   },
   {
     image: { url: "./images/posts/pexels-photo-631954.jpeg" },
-    id: "post-19",
+    id: "post-18",
     user: {
       name: "Vjapratama",
       image: {
@@ -376,7 +376,7 @@ let mainPostList = [
   },
   {
     image: { url: "./images/posts/pexels-photo-1582458.jpeg" },
-    id: "post-20",
+    id: "post-19",
     user: {
       name: "Matheus Ferreira",
       image: {
@@ -394,7 +394,7 @@ let mainPostList = [
   },
   {
     image: { url: "./images/posts/pexels-photo-1612427.jpeg" },
-    id: "post-21",
+    id: "post-20",
     user: {
       name: "Till Lindemann",
       image: {
@@ -412,7 +412,7 @@ let mainPostList = [
   },
   {
     image: { url: "./images/posts/pexels-photo-813269.jpeg" },
-    id: "post-22",
+    id: "post-21",
     user: {
       name: "Bruse Mars",
       image: {
@@ -435,7 +435,7 @@ let mainPostList = [
   },
   {
     image: { url: "./images/posts/pexels-photo-894695.jpeg" },
-    id: "post-23",
+    id: "post-22",
     user: {
       name: "Incognito",
       image: {
@@ -453,7 +453,7 @@ let mainPostList = [
   },
   {
     image: { url: "./images/posts/pexels-photo-91227.jpeg" },
-    id: "post-24",
+    id: "post-23",
     user: {
       name: "Irina Kostenich",
       image: {
@@ -477,7 +477,7 @@ let mainPostList = [
   },
   {
     image: { url: "./images/posts/pexels-photo-773594.jpeg" },
-    id: "post-25",
+    id: "post-24",
     user: {
       name: "Irina Kostenich",
       image: {
@@ -500,7 +500,7 @@ let mainPostList = [
   },
   {
     image: { url: "./images/posts/pexels-photo-1072179.jpeg" },
-    id: "post-26",
+    id: "post-25",
     user: {
       name: "Jannet Corgi",
       image: {

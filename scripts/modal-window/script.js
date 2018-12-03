@@ -6,8 +6,8 @@ class ModalWindow {
     this._postList = postList;
   }
 
-  set postList(postList) {
-    this._postList = postList;
+  set postList(value) {
+    this._postList = value;
   }
 
   applyAction(className, action) {
@@ -97,15 +97,15 @@ class ModalWindow {
     }
   }
 
-  handleModalWindow(target, currentPage, postList) {
+  handleModalWindow(target, currentPage) {
     if (target) {
       if (target.className.includes("like-click")) {
         if (target.className.includes("post-like-click")) {
           this._post = this.getPost(this.getParentPost(target));
           this.likeOnClick();
-          this.refreshPosts(currentPage, postList);
+          this.refreshPosts(currentPage, this._postList);
         } else {
-          this.handleLike(currentPage, postList);
+          this.handleLike(currentPage, this._postList);
         }
       }
       this.selectAction(target);

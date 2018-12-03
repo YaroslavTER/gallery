@@ -33,7 +33,9 @@ window.onload = () => {
       upload.postList = changedPostList;
       const newPostList = upload.handleUpload();
       if (newPostList) {
-        changedPostList = sort.postList = filter.postList = pagination.postList = newPostList;
+        sort.postList = newPostList;
+        filter.postList = newPostList;
+        pagination.postList = newPostList;
         changedPostList = filter.handleFilter("all");
         sortByCheckedButton();
         pagination.goToPage(1);

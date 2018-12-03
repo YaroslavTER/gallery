@@ -1,5 +1,11 @@
 class Sort {
-  constructor() {}
+  constructor(postList) {
+    this._postList = postList;
+  }
+
+  set postList(value) {
+    this._postList = value;
+  }
 
   sortPostList(postList, currentPage, action) {
     const sortedPosts = postList.sort(action);
@@ -20,7 +26,7 @@ class Sort {
   }
 
   sortBy(currentPage, compare) {
-    return this.sortPostList(mainPostList, currentPage, compare);
+    return this.sortPostList(this._postList, currentPage, compare);
   }
 
   handleSort(currentPage, target) {
@@ -28,7 +34,7 @@ class Sort {
       case "new":
         return this.sortBy(
           currentPage,
-          (a, b) => this.getIdNumber(a.id) > this.getIdNumber(b.id)
+          (a, b) => this.getIdNumber(a.id) < this.getIdNumber(b.id)
         );
       case "trending":
         return this.sortBy(

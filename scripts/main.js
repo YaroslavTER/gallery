@@ -3,28 +3,44 @@ const menu = new Menu();
 const pageSelector = new PageSelector(document.getElementById("page_browse"));
 const breadcrumbs = new Breadcrumbs();
 const itemsPerPage = 10;
-const filter = new Filter(JSON.parse(JSON.stringify(mainPostList)));
+const filter = new Filter(mainPostList);
 const modalWindow = new ModalWindow(itemsPerPage, mainPostList);
 const pagination = new Pagination(mainPostList, itemsPerPage, 4);
 const radio = new Radio();
-const sort = new Sort();
+const sort = new Sort(mainPostList);
+const upload = new Upload(mainPostList);
 const event = "click";
 let currentPage = 1;
 let changedPostList = JSON.parse(JSON.stringify(mainPostList));
 
 window.onload = () => {
-  /* const sortByCheckedButton = () => {
+  const sortByCheckedButton = () => {
     changedPostList = sort.handleSort(
       currentPage,
       radio.getCheckedRadioButton(),
       changedPostList
     );
   };
-  sortByCheckedButton(); */
   //changedPostList = pagination.goToPage(currentPage);
   changedPostList = filter.handleFilter("all");
   pagination.postList = changedPostList;
   pagination.goToPage(1);
+
+  eventAction.setDisplayOnElementEvent(
+    document.getElementById("submit"),
+    event,
+    () => {
+      upload.postList = changedPostList;
+      const newPostList = upload.handleUpload();
+      if (newPostList) {
+        changedPostList = sort.postList = filter.postList = pagination.postList = newPostList;
+        changedPostList = filter.handleFilter("all");
+        sortByCheckedButton();
+        pagination.goToPage(1);
+        pageSelector.showPageById("page_browse");
+      }
+    }
+  );
 
   eventAction.setDisplayOnElementEvent(
     document.getElementById("search-button"),
@@ -36,6 +52,7 @@ window.onload = () => {
       }
       changedPostList = filter.handleFilter(inputText);
       pagination.postList = changedPostList;
+
       pagination.goToPage(1);
       //sortByCheckedButton();
     }
@@ -56,6 +73,7 @@ window.onload = () => {
 
   eventAction.setDisplayOnElementEvent(
     [
+      document.getElementById("logo"),
       ...document.getElementsByClassName("inline-menu"),
       ...document.getElementsByClassName("burger"),
       document.getElementById("breadcrumbs")
@@ -84,7 +102,9 @@ window.onload = () => {
     ...document.getElementsByClassName("sort"),
     event,
     target => {
+      changedPostList = filter.handleFilter("all");
       changedPostList = sort.handleSort(currentPage, target);
+      pagination.goToPage(1);
     }
   );
 

@@ -16,15 +16,26 @@ class Breadcrumbs extends BreadcrumbsGenerator {
       let currentElement = target;
       this._path = null;
       this._path = [];
-      while (!currentElement.className.includes("top-level-menu")) {
+      while (
+        currentElement &&
+        !currentElement.className.includes("top-level-menu")
+      ) {
         //classList
         if (currentElement.tagName.toLowerCase() === "li") {
           this.addMenuItem(currentElement.firstChild.textContent);
         }
         currentElement = currentElement.parentElement;
       }
-      this.addMenuItem(currentElement.firstChild.textContent);
-      this._path = ["Home"].concat(this._path.reverse());
+      if (!currentElement) {
+        this._path = ["Home"];
+      } else {
+        this.addMenuItem(currentElement.firstChild.textContent);
+        if (this._path[0] === "Home") {
+          this._path = this._path.reverse();
+        } else {
+          this._path = ["Home"].concat(this._path.reverse());
+        }
+      }
       const targetGen = "path-target-gen";
       CustomDOMGenerator.removeAllChildElements(targetGen);
       this.generateBreadcrumbs(targetGen, this._path);

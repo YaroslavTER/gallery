@@ -3,6 +3,10 @@ class Filter {
     this._postList = postList;
   }
 
+  set postList(value) {
+    this._postList = value;
+  }
+
   filterPosts(tagname) {
     if (tagname === "all") {
       return this._postList;

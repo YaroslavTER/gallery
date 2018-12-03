@@ -1,11 +1,11 @@
 let mainPostList = [
   {
-    image: { url: "./images/header/alessandro-sacchi.jpg" },
-    id: "post-0",
+    image: { url: "./images/posts/kaidi-guo.jpg" },
+    id: "post-1",
     user: {
       name: "Till Lindemann",
       image: {
-        src: "./images/users/user/till-lindemann.jpg"
+        src: "./images/users/till-lindemann.jpg"
       }
     },
     share: {
@@ -23,33 +23,12 @@ let mainPostList = [
     ]
   },
   {
-    image: {
-      url: "./images/header/alessandro-sacchi.jpg"
-    },
-    id: "post-1",
-    user: {
-      name: "Till Lindemann",
-      image: {
-        src:
-          "https://shareville-media.s3.amazonaws.com/cache/41/2c/412cb688e429f372335f7527695b29b8.jpg" //css
-      }
-    },
-    share: {
-      link: "#"
-    },
-    like: {
-      isPressed: false,
-      counter: 13
-    },
-    tagList: [{ name: "mountains" }, { name: "snow" }, { name: "sunset" }]
-  },
-  {
-    image: { url: "./images/header/kaidi-guo.jpg" },
+    image: { url: "./images/posts/pexels-photo-1639418.jpeg" },
     id: "post-2",
     user: {
       name: "Till Lindemann",
       image: {
-        src: "../../../images/users/user/till-lindemann.jpg" //css
+        src: "./images/users/till-lindemann.jpg"
       }
     },
     share: {
@@ -57,18 +36,17 @@ let mainPostList = [
     },
     like: {
       isPressed: false,
-      counter: 1
+      counter: 15
     },
-    tagList: [{ name: "nature" }, { name: "snow" }, { name: "sunset" }]
+    tagList: [{ name: "train" }, { name: "fog" }, { name: "railway" }]
   },
   {
-    image: { url: "./images/header/kaidi-guo.jpg" },
+    image: { url: "./images/posts/pexels-photo-1638502.jpeg" },
     id: "post-3",
     user: {
       name: "Till Lindemann",
       image: {
-        src:
-          "https://shareville-media.s3.amazonaws.com/cache/41/2c/412cb688e429f372335f7527695b29b8.jpg" //css
+        src: "./images/users/till-lindemann.jpg"
       }
     },
     share: {
@@ -76,18 +54,17 @@ let mainPostList = [
     },
     like: {
       isPressed: false,
-      counter: 1756
+      counter: 756
     },
-    tagList: [{ name: "nature" }, { name: "snow" }]
+    tagList: [{ name: "calm" }, { name: "lamp" }, { name: "home" }]
   },
   {
-    image: { url: "./images/header/kaidi-guo.jpg" },
+    image: { url: "./images/posts/pexels-photo-1120566.jpeg" },
     id: "post-4",
     user: {
-      name: "Till Lindemann",
+      name: "Irina Kostenich",
       image: {
-        src:
-          "https://shareville-media.s3.amazonaws.com/cache/41/2c/412cb688e429f372335f7527695b29b8.jpg" //css
+        src: "./images/users/irina-kostenich.jpeg"
       }
     },
     share: {
@@ -97,21 +74,15 @@ let mainPostList = [
       isPressed: false,
       counter: 1563
     },
-    tagList: [
-      { name: "mountains" },
-      { name: "nature" },
-      { name: "snow" },
-      { name: "sunset" }
-    ]
+    tagList: [{ name: "girl" }, { name: "blue eyes" }]
   },
   {
-    image: { url: "./images/header/kaidi-guo.jpg" },
+    image: { url: "./images/posts/pexels-photo-115001.jpeg" },
     id: "post-5",
     user: {
-      name: "Till Lindemann",
+      name: "Bruce Mars",
       image: {
-        src:
-          "https://shareville-media.s3.amazonaws.com/cache/41/2c/412cb688e429f372335f7527695b29b8.jpg" //css
+        src: "./images/users/bruce-mars.jpeg"
       }
     },
     share: {
@@ -119,23 +90,17 @@ let mainPostList = [
     },
     like: {
       isPressed: false,
-      counter: 123
+      counter: 352
     },
-    tagList: [
-      { name: "mountains" },
-      { name: "nature" },
-      { name: "snow" },
-      { name: "sunset" }
-    ]
+    tagList: [{ name: "book" }, { name: "reading" }]
   },
   {
-    image: { url: "./images/header/kaidi-guo.jpg" },
+    image: { url: "./images/posts/pexels-photo-991012.jpeg" },
     id: "post-6",
     user: {
-      name: "Till Lindemann",
+      name: "Irina Kostenich",
       image: {
-        src:
-          "https://shareville-media.s3.amazonaws.com/cache/41/2c/412cb688e429f372335f7527695b29b8.jpg" //css
+        src: "./images/users/irina-kostenich.jpeg"
       }
     },
     share: {
@@ -143,23 +108,17 @@ let mainPostList = [
     },
     like: {
       isPressed: false,
-      counter: 123
+      counter: 764
     },
-    tagList: [
-      { name: "mountains" },
-      { name: "nature" },
-      { name: "snow" },
-      { name: "sunset" }
-    ]
+    tagList: [{ name: "sea" }, { name: "nature" }, { name: "beach" }]
   },
   {
-    image: { url: "./images/header/kaidi-guo.jpg" },
+    image: { url: "./images/posts/pexels-photo-1638061.jpeg" },
     id: "post-7",
     user: {
-      name: "Till Lindemann",
+      name: "Jimmy Jimmy",
       image: {
-        src:
-          "https://shareville-media.s3.amazonaws.com/cache/41/2c/412cb688e429f372335f7527695b29b8.jpg" //css
+        src: "./images/users/jimmy-jimmy.jpeg"
       }
     },
     share: {
@@ -167,23 +126,24 @@ let mainPostList = [
     },
     like: {
       isPressed: false,
-      counter: 123
+      counter: 57
     },
     tagList: [
-      { name: "mountains" },
-      { name: "nature" },
       { name: "snow" },
-      { name: "sunset" }
+      { name: "sea" },
+      { name: "cold" },
+      { name: "water" },
+      { name: "clouds" },
+      { name: "dark" }
     ]
   },
   {
-    image: { url: "./images/header/kaidi-guo.jpg" },
+    image: { url: "./images/posts/pexels-photo-1638073.jpeg" },
     id: "post-8",
     user: {
-      name: "Till Lindemann",
+      name: "Lisa Fotios",
       image: {
-        src:
-          "https://shareville-media.s3.amazonaws.com/cache/41/2c/412cb688e429f372335f7527695b29b8.jpg" //css
+        src: "./images/users/lisa-fotios.jpeg"
       }
     },
     share: {
@@ -193,21 +153,15 @@ let mainPostList = [
       isPressed: false,
       counter: 123
     },
-    tagList: [
-      { name: "mountains" },
-      { name: "nature" },
-      { name: "snow" },
-      { name: "sunset" }
-    ]
+    tagList: [{ name: "leafs" }, { name: "nature" }, { name: "dark" }]
   },
   {
-    image: { url: "./images/header/kaidi-guo.jpg" },
+    image: { url: "./images/posts/pexels-photo-1005476.jpeg" },
     id: "post-9",
     user: {
-      name: "Till Lindemann",
+      name: "Tim Gouw",
       image: {
-        src:
-          "https://shareville-media.s3.amazonaws.com/cache/41/2c/412cb688e429f372335f7527695b29b8.jpg" //css
+        src: "./images/users/tim-gouw.png"
       }
     },
     share: {
@@ -215,23 +169,17 @@ let mainPostList = [
     },
     like: {
       isPressed: false,
-      counter: 123
+      counter: 79
     },
-    tagList: [
-      { name: "mountains" },
-      { name: "nature" },
-      { name: "snow" },
-      { name: "sunset" }
-    ]
+    tagList: [{ name: "street" }, { name: "bicycle" }, { name: "summer" }]
   },
   {
-    image: { url: "./images/header/kaidi-guo.jpg" },
+    image: { url: "./images/posts/pexels-photo.jpg" },
     id: "post-10",
     user: {
-      name: "Till Lindemann",
+      name: "Min An",
       image: {
-        src:
-          "https://shareville-media.s3.amazonaws.com/cache/41/2c/412cb688e429f372335f7527695b29b8.jpg" //css
+        src: "./images/users/min-an.jpeg"
       }
     },
     share: {
@@ -239,18 +187,17 @@ let mainPostList = [
     },
     like: {
       isPressed: false,
-      counter: 123
+      counter: 675
     },
-    tagList: [{ name: "nature" }, { name: "sunset" }]
+    tagList: [{ name: "Buildings" }, { name: "City" }]
   },
   {
-    image: { url: "./images/header/kaidi-guo.jpg" },
+    image: { url: "./images/posts/pexels-photo-1549196.jpeg" },
     id: "post-11",
     user: {
       name: "Till Lindemann",
       image: {
-        src:
-          "https://shareville-media.s3.amazonaws.com/cache/41/2c/412cb688e429f372335f7527695b29b8.jpg" //css
+        src: "./images/users/vincent-janssen.jpeg"
       }
     },
     share: {
@@ -258,23 +205,17 @@ let mainPostList = [
     },
     like: {
       isPressed: false,
-      counter: 123
+      counter: 9465
     },
-    tagList: [
-      { name: "mountains" },
-      { name: "nature" },
-      { name: "snow" },
-      { name: "sunset" }
-    ]
+    tagList: [{ name: "beach" }, { name: "people" }, { name: "summer" }]
   },
   {
-    image: { url: "./images/header/kaidi-guo.jpg" },
+    image: { url: "./images/posts/pexels-photo-1394841.jpeg" },
     id: "post-12",
     user: {
-      name: "Till Lindemann",
+      name: "Dids",
       image: {
-        src:
-          "https://shareville-media.s3.amazonaws.com/cache/41/2c/412cb688e429f372335f7527695b29b8.jpg" //css
+        src: "./images/users/dids.jpeg"
       }
     },
     share: {
@@ -282,42 +223,40 @@ let mainPostList = [
     },
     like: {
       isPressed: false,
-      counter: 123
-    },
-    tagList: [{ name: "nature" }, { name: "snow" }, { name: "sunset" }]
-  },
-  {
-    image: { url: "./images/header/kaidi-guo.jpg" },
-    id: "post-13",
-    user: {
-      name: "Till Lindemann",
-      image: {
-        src:
-          "https://shareville-media.s3.amazonaws.com/cache/41/2c/412cb688e429f372335f7527695b29b8.jpg" //css
-      }
-    },
-    share: {
-      link: "#"
-    },
-    like: {
-      isPressed: false,
-      counter: 123
+      counter: 657
     },
     tagList: [
-      { name: "mountains" },
-      { name: "nature" },
-      { name: "snow" },
-      { name: "sunset" }
+      { name: "coup" },
+      { name: "coffe" },
+      { name: "table" },
+      { name: "restaurant" }
     ]
   },
   {
-    image: { url: "./images/header/kaidi-guo.jpg" },
+    image: { url: "./images/posts/pexels-photo-136419.jpeg" },
+    id: "post-13",
+    user: {
+      name: "Johannes Rapprich",
+      image: {
+        src: "./images/users/johannes-rapprich.jpeg"
+      }
+    },
+    share: {
+      link: "#"
+    },
+    like: {
+      isPressed: false,
+      counter: 5
+    },
+    tagList: [{ name: "building" }, { name: "sky" }]
+  },
+  {
+    image: { url: "./images/posts/pexels-photo-640947.jpeg" },
     id: "post-14",
     user: {
-      name: "Till Lindemann",
+      name: "Lisa Fotios",
       image: {
-        src:
-          "https://shareville-media.s3.amazonaws.com/cache/41/2c/412cb688e429f372335f7527695b29b8.jpg" //css
+        src: "./images/users/lisa-fotios.jpeg"
       }
     },
     share: {
@@ -325,18 +264,17 @@ let mainPostList = [
     },
     like: {
       isPressed: false,
-      counter: 123
+      counter: 687
     },
-    tagList: [{ name: "nature" }, { name: "snow" }, { name: "sunset" }]
+    tagList: [{ name: "nature" }, { name: "mountains" }, { name: "autumn" }]
   },
   {
-    image: { url: "./images/header/kaidi-guo.jpg" },
+    image: { url: "./images/posts/pexels-photo-203088.jpeg" },
     id: "post-15",
     user: {
-      name: "Till Lindemann",
+      name: "Tnarg",
       image: {
-        src:
-          "https://shareville-media.s3.amazonaws.com/cache/41/2c/412cb688e429f372335f7527695b29b8.jpg" //css
+        src: "./images/users/tnarg.jpeg"
       }
     },
     share: {
@@ -344,18 +282,17 @@ let mainPostList = [
     },
     like: {
       isPressed: false,
-      counter: 123
+      counter: 6541
     },
-    tagList: [{ name: "nature" }, { name: "snow" }, { name: "sunset" }]
+    tagList: [{ name: "sky" }, { name: "birds" }]
   },
   {
-    image: { url: "./images/header/kaidi-guo.jpg" },
+    image: { url: "./images/posts/pexels-photo-904616.jpeg" },
     id: "post-16",
     user: {
-      name: "Till Lindemann",
+      name: "Jacub Gomez",
       image: {
-        src:
-          "https://shareville-media.s3.amazonaws.com/cache/41/2c/412cb688e429f372335f7527695b29b8.jpg" //css
+        src: "./images/users/jacub-gomez.jpeg"
       }
     },
     share: {
@@ -363,18 +300,23 @@ let mainPostList = [
     },
     like: {
       isPressed: false,
-      counter: 123
+      counter: 35
     },
-    tagList: [{ name: "nature" }, { name: "snow" }, { name: "sunset" }]
+    tagList: [
+      { name: "coup" },
+      { name: "coffe" },
+      { name: "table" },
+      { name: "reading" },
+      { name: "flowers" }
+    ]
   },
   {
-    image: { url: "./images/header/kaidi-guo.jpg" },
+    image: { url: "./images/posts/pexels-photo-1616436.jpeg" },
     id: "post-17",
     user: {
-      name: "Till Lindemann",
+      name: "Matheus Ferrerira",
       image: {
-        src:
-          "https://shareville-media.s3.amazonaws.com/cache/41/2c/412cb688e429f372335f7527695b29b8.jpg" //css
+        src: "./images/users/matheus-ferreira.jpeg"
       }
     },
     share: {
@@ -382,18 +324,17 @@ let mainPostList = [
     },
     like: {
       isPressed: false,
-      counter: 123
+      counter: 3574
     },
-    tagList: [{ name: "nature" }, { name: "snow" }, { name: "sunset" }]
+    tagList: [{ name: "beach" }, { name: "sea" }, { name: "mountains" }]
   },
   {
-    image: { url: "./images/header/kaidi-guo.jpg" },
+    image: { url: "./images/posts/pexels-photo-1330806.jpeg" },
     id: "post-18",
     user: {
-      name: "Till Lindemann",
+      name: "Irina Kostenich",
       image: {
-        src:
-          "https://shareville-media.s3.amazonaws.com/cache/41/2c/412cb688e429f372335f7527695b29b8.jpg" //css
+        src: "./images/users/irina-kostenich.jpeg"
       }
     },
     share: {
@@ -401,18 +342,22 @@ let mainPostList = [
     },
     like: {
       isPressed: false,
-      counter: 123
+      counter: 354
     },
-    tagList: [{ name: "nature" }, { name: "snow" }, { name: "sunset" }]
+    tagList: [
+      { name: "nature" },
+      { name: "mountains" },
+      { name: "beach" },
+      { name: "sea" }
+    ]
   },
   {
-    image: { url: "./images/header/kaidi-guo.jpg" },
+    image: { url: "./images/posts/pexels-photo-631954.jpeg" },
     id: "post-19",
     user: {
-      name: "Till Lindemann",
+      name: "Vjapratama",
       image: {
-        src:
-          "https://shareville-media.s3.amazonaws.com/cache/41/2c/412cb688e429f372335f7527695b29b8.jpg" //css
+        src: "./images/users/vjapratama.jpeg"
       }
     },
     share: {
@@ -420,18 +365,22 @@ let mainPostList = [
     },
     like: {
       isPressed: false,
-      counter: 123
+      counter: 3587
     },
-    tagList: [{ name: "nature" }, { name: "snow" }, { name: "sunset" }]
+    tagList: [
+      { name: "tree" },
+      { name: "snow" },
+      { name: "winter" },
+      { name: "night" }
+    ]
   },
   {
-    image: { url: "./images/header/kaidi-guo.jpg" },
+    image: { url: "./images/posts/pexels-photo-1582458.jpeg" },
     id: "post-20",
     user: {
-      name: "Till Lindemann",
+      name: "Matheus Ferreira",
       image: {
-        src:
-          "https://shareville-media.s3.amazonaws.com/cache/41/2c/412cb688e429f372335f7527695b29b8.jpg" //css
+        src: "./images/users/matheus-ferreira.jpeg"
       }
     },
     share: {
@@ -439,18 +388,17 @@ let mainPostList = [
     },
     like: {
       isPressed: false,
-      counter: 123
+      counter: 35
     },
-    tagList: [{ name: "nature" }, { name: "snow" }, { name: "sunset" }]
+    tagList: [{ name: "leafs" }, { name: "dark" }, { name: "drops" }]
   },
   {
-    image: { url: "./images/header/kaidi-guo.jpg" },
+    image: { url: "./images/posts/pexels-photo-1612427.jpeg" },
     id: "post-21",
     user: {
       name: "Till Lindemann",
       image: {
-        src:
-          "https://shareville-media.s3.amazonaws.com/cache/41/2c/412cb688e429f372335f7527695b29b8.jpg" //css
+        src: "./images/users/till-lindemann.jpg"
       }
     },
     share: {
@@ -458,18 +406,17 @@ let mainPostList = [
     },
     like: {
       isPressed: false,
-      counter: 123
+      counter: 368
     },
-    tagList: [{ name: "nature" }, { name: "snow" }, { name: "sunset" }]
+    tagList: [{ name: "building" }, { name: "city" }]
   },
   {
-    image: { url: "./images/header/kaidi-guo.jpg" },
+    image: { url: "./images/posts/pexels-photo-813269.jpeg" },
     id: "post-22",
     user: {
-      name: "Till Lindemann",
+      name: "Bruse Mars",
       image: {
-        src:
-          "https://shareville-media.s3.amazonaws.com/cache/41/2c/412cb688e429f372335f7527695b29b8.jpg" //css
+        src: "./images/users/bruce-mars.jpeg"
       }
     },
     share: {
@@ -477,8 +424,96 @@ let mainPostList = [
     },
     like: {
       isPressed: false,
-      counter: 123
+      counter: 2547
     },
-    tagList: [{ name: "nature" }, { name: "snow" }, { name: "sunset" }]
+    tagList: [
+      { name: "sky" },
+      { name: "space" },
+      { name: "night" },
+      { name: "milky way" }
+    ]
+  },
+  {
+    image: { url: "./images/posts/pexels-photo-894695.jpeg" },
+    id: "post-23",
+    user: {
+      name: "Incognito",
+      image: {
+        src: "./images/users/incognito.jpg"
+      }
+    },
+    share: {
+      link: "#"
+    },
+    like: {
+      isPressed: false,
+      counter: 355
+    },
+    tagList: [{ name: "coffe" }, { name: "grains" }]
+  },
+  {
+    image: { url: "./images/posts/pexels-photo-91227.jpeg" },
+    id: "post-24",
+    user: {
+      name: "Irina Kostenich",
+      image: {
+        src: "./images/users/irina-kostenich.jpeg"
+      }
+    },
+    share: {
+      link: "#"
+    },
+    like: {
+      isPressed: false,
+      counter: 468
+    },
+    tagList: [
+      { name: "man" },
+      { name: "smile" },
+      { name: "black white" },
+      { name: "black" },
+      { name: "white" }
+    ]
+  },
+  {
+    image: { url: "./images/posts/pexels-photo-773594.jpeg" },
+    id: "post-25",
+    user: {
+      name: "Irina Kostenich",
+      image: {
+        src: "./images/users/irina-kostenich.jpeg"
+      }
+    },
+    share: {
+      link: "#"
+    },
+    like: {
+      isPressed: false,
+      counter: 468
+    },
+    tagList: [
+      { name: "winter" },
+      { name: "snow" },
+      { name: "tree" },
+      { name: "cold" }
+    ]
+  },
+  {
+    image: { url: "./images/posts/pexels-photo-1072179.jpeg" },
+    id: "post-26",
+    user: {
+      name: "Jannet Corgi",
+      image: {
+        src: "./images/users/jannet-corgi.jpeg"
+      }
+    },
+    share: {
+      link: "#"
+    },
+    like: {
+      isPressed: false,
+      counter: 468
+    },
+    tagList: [{ name: "leafs" }, { name: "dark" }]
   }
 ];

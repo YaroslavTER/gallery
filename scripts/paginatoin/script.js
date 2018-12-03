@@ -8,12 +8,16 @@ class Pagination {
     this._length = this.refreshLength(postList, itemsPerPage);
   }
 
-  set postList(postList) {
-    this._postList = postList;
+  set postList(value) {
+    this._postList = value;
   }
 
-  set length(length) {
-    this._length = length;
+  get postList() {
+    return this._postList;
+  }
+
+  set length(value) {
+    this._length = value;
   }
 
   refreshLength(postList, itemsPerPage) {
@@ -117,7 +121,6 @@ class Pagination {
   }
 
   handleArrows(identifier) {
-    this.refreshLength(this._postList, this._itemsPerPage);
     switch (identifier) {
       case "next":
         if (this._currentPage < this._length) {

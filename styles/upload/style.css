@@ -7,6 +7,10 @@
   display: grid;
 }
 
+#page_upload form > div {
+  margin-right: 10px;
+}
+
 #page_upload form > div,
 #page_upload form > div > input {
   margin-bottom: 15px;
@@ -34,10 +38,17 @@
   background-color: rgb(241, 241, 241);
 }
 
+#page_upload .submit-wrapper {
+  display: grid;
+  width: 100%;
+  margin-right: 10px;
+}
+
 #page_upload input[type="button"] {
   max-width: 100px;
+  cursor: pointer;
   background-color: rgb(63, 63, 63);
   color: rgb(241, 241, 241);
   justify-self: end;
-  margin-right: -10px;
+  margin-right: -2px;
 }

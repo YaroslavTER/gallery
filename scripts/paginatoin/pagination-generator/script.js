@@ -1,6 +1,5 @@
 class PaginationGenerator {
   static generatePosts(postList, currentPage) {
-    console.log("generation", postList, currentPage);
     CustomDOMGenerator.generateElements(
       postList.map((post, index) => {
         return {
@@ -11,8 +10,8 @@ class PaginationGenerator {
             { name: "index", value: (currentPage - 1) * 10 + index }
           ],
           style: `#${post.id} {
-                  background-image: url("${post.image.url}");
-                }`,
+                    background-image: url("${post.image.url}");
+                  }`,
           childList: [
             {
               name: "div",
@@ -35,7 +34,9 @@ class PaginationGenerator {
                       attributes: [
                         { name: "class", value: "likes-number post-like-click" }
                       ],
-                      childList: [{ text: post.like.counter, isParent: true }]
+                      childList: [
+                        { text: post.like.counter.toString(), isParent: true }
+                      ]
                     }
                   ]
                 }
@@ -63,14 +64,8 @@ class PaginationGenerator {
                     },
                     {
                       name: "div",
-                      text: `${post.user.name}${currentPage}${index}`,
+                      text: `${post.user.name}`,
                       attributes: [{ name: "class", value: "user-name" }]
-                      /* childList: [
-                        {
-                          ,
-                          isParent: true
-                        }
-                      ] */
                     }
                   ]
                 },

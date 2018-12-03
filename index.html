@@ -11,7 +11,8 @@
   <body>
     <header>
       <div class="header-wrapper">
-        <h2>Gallery</h2>
+        <h2 id="logo" class="select:browse">Gallery</h2>
+
         <form action="" onsubmit="return false">
           <input
             type="search"
@@ -30,7 +31,7 @@
         </form>
         <nav id="main-menu">
           <ul class="inline-menu dark">
-            <li id="tm:0" class="vertical-line">Home</li>
+            <li id="tm:0" class="vertical-line select:browse">Home</li>
             <li id="tm:1" class="vertical-line dropdown parent top-level-menu">
               Browse
               <img
@@ -148,7 +149,9 @@
     </header>
 
     <article role="main">
-      <header><nav class="breadcrumbs" id="path-target-gen"><h1>Home</h1></nav></header>
+      <header>
+        <nav class="breadcrumbs" id="path-target-gen"><h1>Home</h1></nav>
+      </header>
       <article id="page_browse">
         <header>
           <div class="sort-filter-wrapper">
@@ -159,15 +162,17 @@
               <label for="new">New</label>
             </div>
             <div class="filter">
-              <select>
+              <select id="filter-posts">
                 <option value="0">all</option>
                 <option value="1">mountains</option>
                 <option value="2">sunset</option>
+                <option value="3">sky</option>
+                <option value="4">building</option>
+                <option value="5">snow</option>
               </select>
             </div>
           </div>
         </header>
-
         <div class="posts-wrapper" id="posts-target-gen"></div>
 
         <article id="mw-target-gen" class="modal-wrapper"></article>
@@ -206,12 +211,14 @@
         <form action="" onsubmit="return false">
           <div>
             <label for="img-url" name="img-url-label">Url</label>
-            <input
-              type="text"
-              placeholder="link"
-              name="img-url-input"
-              id="img-url"
-            />
+            <div class="input-wrapper">
+              <input
+                type="url"
+                placeholder="link"
+                name="img-url-input"
+                id="img-url"
+              />
+            </div>
           </div>
           <div>
             <label for="img-url" name="tags-label">Tags</label>
@@ -219,10 +226,12 @@
               type="text"
               placeholder="mountains, clear sky, sunset"
               name="tags-input"
-              id="img-url"
+              id="tags"
             />
           </div>
-          <input type="button" value="Submit post" />
+          <div class="submit-wrapper">
+            <input type="button" id="submit" value="Submit post" />
+          </div>
         </form>
       </article>
     </article>
@@ -282,6 +291,8 @@
   <script src="./scripts/breadcrumbs/script.js"></script>
 
   <script src="./scripts/menu/script.js"></script>
+
+  <script src="./scripts/upload/script.js"></script>
 
   <script src="./scripts/paginatoin/posts/script.js"></script>
   <script src="./scripts/paginatoin/pagination-generator/script.js"></script>

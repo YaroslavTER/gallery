@@ -23,6 +23,7 @@ class PageSelector extends PageSelectorGenerator {
         CustomDOMGenerator.removeAllChildElements(videoTargetGen);
         break;
       case "upload":
+        CustomDOMGenerator.removeAllChildElements(videoTargetGen);
         this.removeBackgroundImage();
         break;
     }
@@ -33,7 +34,6 @@ class PageSelector extends PageSelectorGenerator {
     if (page) {
       const pageName = page.id.split("_").pop();
       this.changeHeader(pageName);
-      console.log(pageName, this._previousPage);
       if (this._previousPage) {
         Display.hide(this._previousPage);
       }

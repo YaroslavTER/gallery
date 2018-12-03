@@ -7,8 +7,6 @@ class PageSelectorGenerator {
         {
           name: "video",
           style: `body > header { 
-                    max-height: 350px;
-                    height: 100%;
                     background-image: none;
                   }
                   
@@ -56,7 +54,7 @@ class PageSelectorGenerator {
       {
         name: "div",
         style: `body > header {
-                  background-image: url("../images/header/pexels-photo-268862.jpeg");
+                  background-image: url("../images/header/pexels-photo-167834.jpeg");
                 }`
       },
       document.getElementById("video-target-gen")

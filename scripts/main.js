@@ -104,9 +104,7 @@ window.onload = () => {
     ...document.getElementsByClassName("sort"),
     event,
     target => {
-      changedPostList = filter.handleFilter("all");
-      changedPostList = sort.handleSort(currentPage, target);
-      pagination.goToPage(1);
+      changedPostList = sort.handleSort(currentPage, target, changedPostList);
     }
   );
 

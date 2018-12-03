@@ -10,6 +10,7 @@ class Sort {
       postsPerPage,
       sortedPosts
     );
+    console.log(chunkForRender);
     CustomDOMGenerator.removeAllChildElements("posts-target-gen");
     PaginationGenerator.generatePosts(chunkForRender, currentPage);
     return sortedPosts;
@@ -24,13 +25,12 @@ class Sort {
   }
 
   handleSort(currentPage, target, postList) {
-    console.log(postList);
     switch (target.id) {
       case "new":
         return this.sortBy(
           postList,
           currentPage,
-          (a, b) => this.getIdNumber(a.id) > this.getIdNumber(b.id)
+          (a, b) => this.getIdNumber(a.id) < this.getIdNumber(b.id)
         );
       case "trending":
         return this.sortBy(

@@ -30,18 +30,21 @@ window.onload = () => {
     document.getElementById("submit"),
     event,
     () => {
-      upload.postList = changedPostList;
-      const newPostList = upload.handleUpload();
-      if (newPostList) {
-        sort.postList = newPostList;
+      //upload.postList = changedPostList;
+      //const newPostList = upload.handleUpload(changedPostList);
+      //if (newPostList) {
+      changedPostList = upload.handleUpload(changedPostList); //upload.handleUpload(changedPostList);
+
+      /*sort.postList = newPostList;
         filter.postList = newPostList;
         pagination.postList = newPostList;
         changedPostList = filter.handleFilter("all");
         sortByCheckedButton();
-        pagination.goToPage(1);
-        pageSelector.showPageById("page_browse");
-      }
+        pagination.goToPage(1);*/
+      pageSelector.showPageById("page_browse");
+      sortByCheckedButton();
     }
+    // }
   );
 
   eventAction.setDisplayOnElementEvent(
@@ -54,9 +57,7 @@ window.onload = () => {
       }
       changedPostList = filter.handleFilter(inputText);
       pagination.postList = changedPostList;
-
       pagination.goToPage(1);
-      //sortByCheckedButton();
     }
   );
 
@@ -68,7 +69,7 @@ window.onload = () => {
         changedPostList = filter.handleFilter(target.text);
         pagination.postList = changedPostList;
         pagination.goToPage(1);
-        //sortByCheckedButton();
+        sortByCheckedButton();
       }
     }
   );
@@ -105,6 +106,8 @@ window.onload = () => {
     event,
     target => {
       changedPostList = sort.handleSort(currentPage, target, changedPostList);
+      /* pagination.postList = changedPostList;
+      currentPage = pagination.goToPage(1); */
     }
   );
 

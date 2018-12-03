@@ -21,7 +21,6 @@ window.onload = () => {
       changedPostList
     );
   };
-  //changedPostList = pagination.goToPage(currentPage);
   changedPostList = filter.handleFilter("all");
   pagination.postList = changedPostList;
   pagination.goToPage(1);
@@ -30,21 +29,10 @@ window.onload = () => {
     document.getElementById("submit"),
     event,
     () => {
-      //upload.postList = changedPostList;
-      //const newPostList = upload.handleUpload(changedPostList);
-      //if (newPostList) {
-      changedPostList = upload.handleUpload(changedPostList); //upload.handleUpload(changedPostList);
-
-      /*sort.postList = newPostList;
-        filter.postList = newPostList;
-        pagination.postList = newPostList;
-        changedPostList = filter.handleFilter("all");
-        sortByCheckedButton();
-        pagination.goToPage(1);*/
+      changedPostList = upload.handleUpload(changedPostList);
       pageSelector.showPageById("page_browse");
       sortByCheckedButton();
     }
-    // }
   );
 
   eventAction.setDisplayOnElementEvent(
@@ -106,8 +94,6 @@ window.onload = () => {
     event,
     target => {
       changedPostList = sort.handleSort(currentPage, target, changedPostList);
-      /* pagination.postList = changedPostList;
-      currentPage = pagination.goToPage(1); */
     }
   );
 

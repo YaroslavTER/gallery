@@ -10,7 +10,6 @@ class Sort {
       postsPerPage,
       sortedPosts
     );
-    console.log(chunkForRender);
     CustomDOMGenerator.removeAllChildElements("posts-target-gen");
     PaginationGenerator.generatePosts(chunkForRender, currentPage);
     return sortedPosts;
